@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>Login</h1>
+<form method="post" action="/user/perform_login">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Login</button>
+</form>
+<hr>
+<h2>Social Login</h2>
+<a href="/user/kakao">Login with Kakao</a>
+<a href="/user/naver">Login with Naver</a>
+<a href="/user/google">Login with Google</a>
+</body>
+</html>
+
+
+
