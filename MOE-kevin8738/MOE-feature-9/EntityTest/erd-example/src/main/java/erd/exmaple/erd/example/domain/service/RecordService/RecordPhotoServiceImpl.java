@@ -24,7 +24,7 @@ public class RecordPhotoServiceImpl implements RecordPhotoService {
 
     @Override
     @Transactional
-    public List<RecordPhotoResponseDTO.PhotoResponseDTO> receiveRecordPhoto(Long userId, Long recordPageId, RecordPhotoRequestDTO.PhotoRequestDTO request) {
+    public List<RecordPhotoResponseDTO.PhotoResponseDTO> receiveRecordPhoto(Long recordPageId, RecordPhotoRequestDTO.PhotoRequestDTO request) {
         // RecordPageEntity 가져오기
         Record_PageEntity recordPage = recordPageRepository.findById(recordPageId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid record page ID"));

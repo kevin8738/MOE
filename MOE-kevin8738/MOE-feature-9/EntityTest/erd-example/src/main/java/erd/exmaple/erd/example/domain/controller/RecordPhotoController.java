@@ -15,12 +15,11 @@ import java.util.List;
 public class RecordPhotoController {
     private final RecordPhotoService recordPhotoService;
 
-    @PostMapping("/{userId}/{recordPageId}/recordPhoto")
+    @PostMapping("/{recordPageId}/recordPhoto")
     public ResponseEntity<List<RecordPhotoResponseDTO.PhotoResponseDTO>> receiveRecordPhoto(
-            @PathVariable Long userId,
             @PathVariable Long recordPageId,
             @RequestBody RecordPhotoRequestDTO.PhotoRequestDTO recordPhotoRequestDTO) {
-        List<RecordPhotoResponseDTO.PhotoResponseDTO> receivePhoto = recordPhotoService.receiveRecordPhoto(userId, recordPageId, recordPhotoRequestDTO);
+        List<RecordPhotoResponseDTO.PhotoResponseDTO> receivePhoto = recordPhotoService.receiveRecordPhoto(recordPageId, recordPhotoRequestDTO);
         return ResponseEntity.ok(receivePhoto);
     }
 }

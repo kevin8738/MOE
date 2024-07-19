@@ -9,7 +9,7 @@ public class RecordCreationConverter {
 
     public static RecordResponseDTO.RecordResultDTO toRecordResultDTO(Record_PhotoBodyEntity recordPhotoBody) {
         return RecordResponseDTO.RecordResultDTO.builder()
-                .record_photoBodyId(recordPhotoBody.getId())
+                .recordPhotoBodyId(recordPhotoBody.getId())
                 .createdAt(recordPhotoBody.getCreatedAt())
                 .build();
     }
@@ -17,7 +17,7 @@ public class RecordCreationConverter {
     public static Record_PhotoBodyEntity toRecord_PhotoBodyEntity(RecordRequestDTO.RecordDTO request, Record_PhotoEntity recordPhoto) {
         return Record_PhotoBodyEntity.builder()
                 .body(request.getBody())
-                .recordPhoto(recordPhoto) // 필드 이름을 반영하여 수정합니다.
+                .recordPhoto(recordPhoto)
                 .build();
     }
 }

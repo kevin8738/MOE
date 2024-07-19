@@ -9,7 +9,7 @@ public class RecordResponseDTO {
     @Builder
     @Getter
     public static class RecordResultDTO {
-        Long record_photoBodyId;
+        Long recordPhotoBodyId;
         LocalDateTime createdAt;
     }
 }
