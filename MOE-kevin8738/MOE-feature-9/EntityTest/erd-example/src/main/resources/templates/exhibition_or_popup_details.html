@@ -10,18 +10,18 @@
 <p>End Date: <span th:text="${recordPage.exhibition != null ? recordPage.exhibition.endDate : recordPage.popupStore.endDate}">End Date</span></p>
 
 <div th:each="photo : ${recordPhotos}">
-    <a th:href="@{/record/latest/{userId}/{id}/photo/{photoId}(userId=${userId}, id=${recordPage.id}, photoId=${photo.id})}">
+    <a th:href="@{/record/{userId}/{id}/photo/{photoId}(userId=${userId}, id=${recordPage.id}, photoId=${photo.id})}">
         <img th:src="@{${photo.photoUrl}}" th:alt="${photo.id}"/>
     </a>
 </div>
 
 <div>
-        <span th:if="${currentPage > 0}">
-            <a th:href="@{/record/latest/{userId}/{id}(userId=${userId}, id=${recordPage.id}, page=${currentPage - 1})}">Previous</a>
-        </span>
+    <span th:if="${currentPage > 0}">
+        <a th:href="@{/record/{userId}/{id}(userId=${userId}, id=${recordPage.id}, page=${currentPage - 1})}">Previous</a>
+    </span>
     <span th:if="${currentPage < totalPages - 1}">
-            <a th:href="@{/record/latest/{userId}/{id}(userId=${userId}, id=${recordPage.id}, page=${currentPage + 1})}">Next</a>
-        </span>
+        <a th:href="@{/record/{userId}/{id}(userId=${userId}, id=${recordPage.id}, page=${currentPage + 1})}">Next</a>
+    </span>
 </div>
 </body>
 </html>

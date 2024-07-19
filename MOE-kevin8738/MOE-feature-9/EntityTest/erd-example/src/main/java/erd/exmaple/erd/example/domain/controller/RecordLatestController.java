@@ -20,11 +20,11 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/record/latest/{userId}")
+@RequestMapping("/record/{userId}")
 public class RecordLatestController {
     private final RecordService recordService;
 
-    @GetMapping
+    @GetMapping("/latest")
     public String getRecordList(@PathVariable Long userId, Pageable pageable, Model model) {
         Page<Record_PageEntity> records = recordService.getPagedRecords(PageRequest.of(pageable.getPageNumber(), 4), false, userId);
         List<PhotoEntity> photos = recordService.getPhotosByRecordPages(records.getContent());

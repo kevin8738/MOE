@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Record List</title>
+    <title>Record List (Latest)</title>
 </head>
 <body>
 <div th:each="record, iterStat : ${records}">
-    <a th:href="@{/record/latest/{userId}/{id}(userId=${userId}, id=${record.id})}">
+    <a th:href="@{/record/{userId}/{id}(userId=${userId}, id=${record.id})}">
         <img th:src="@{${photos[iterStat.index].photo}}" th:alt="recordPhoto"/>
         <p th:text="${record.exhibition != null ? record.exhibition.name : record.popupStore.name}">Record Name</p>
         <p th:text="${record.exhibition != null ? record.exhibition.startDate + ' ~ ' + record.exhibition.endDate : record.popupStore.startDate + ' ~ ' + record.popupStore.endDate}">Record Period</p>
@@ -14,12 +14,12 @@
 </div>
 
 <div>
-        <span th:if="${currentPage > 0}">
-            <a th:href="@{/record/latest/{userId}(userId=${userId}, page=${currentPage - 1})}">Previous</a>
-        </span>
+    <span th:if="${currentPage > 0}">
+        <a th:href="@{/record/latest/{userId}(userId=${userId}, page=${currentPage - 1})}">Previous</a>
+    </span>
     <span th:if="${currentPage < totalPages - 1}">
-            <a th:href="@{/record/latest/{userId}(userId=${userId}, page=${currentPage + 1})}">Next</a>
-        </span>
+        <a th:href="@{/record/latest/{userId}(userId=${userId}, page=${currentPage + 1})}">Next</a>
+    </span>
 </div>
 </body>
 </html>

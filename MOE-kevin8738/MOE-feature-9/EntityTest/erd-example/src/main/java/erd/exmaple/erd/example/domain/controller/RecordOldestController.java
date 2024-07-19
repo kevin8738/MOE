@@ -20,11 +20,11 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/record/oldest/{userId}")
+@RequestMapping("/record/{userId}")
 public class RecordOldestController {
     private final RecordService recordService;
 
-    @GetMapping
+    @GetMapping("/oldest")
     public String getRecordList(@PathVariable Long userId, Pageable pageable, Model model) {
         Page<Record_PageEntity> records = recordService.getPagedRecords(PageRequest.of(pageable.getPageNumber(), 4), true, userId);
         List<PhotoEntity> photos = recordService.getPhotosByRecordPages(records.getContent());
@@ -35,29 +35,5 @@ public class RecordOldestController {
         model.addAttribute("userId", userId);
         return "record_list_oldest";
     }
-    @GetMapping("/{id}")
-    public String getExhibitionOrPopupDetails(@PathVariable Long userId, @PathVariable Long id, @RequestParam(defaultValue = "0") int page, Model model) {
-        Record_PageEntity recordPage = recordService.getRecordPageById(id, userId);
-        Page<Record_PhotoEntity> recordPhotos = recordService.getRecordPhotosByPageId(id, PageRequest.of(page, 4), userId);
 
-        PhotoEntity photo = recordService.getPhotoByRecordPage(recordPage); // 사진을 가져오는 서비스 메서드 추가
-
-        model.addAttribute("recordPage", recordPage);
-        model.addAttribute("recordPhotos", recordPhotos);
-        model.addAttribute("photo", photo); // 사진을 모델에 추가
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", recordPhotos.getTotalPages());
-        model.addAttribute("userId", userId);
-        return "exhibition_or_popup_details";
-    }
-
-    @GetMapping("/{id}/photo/{photoId}")
-    public String getRecordPhotoDetails(@PathVariable Long userId, @PathVariable Long id, @PathVariable Long photoId, Model model) {
-        Record_PhotoEntity recordPhoto = recordService.getRecordPhotoById(photoId, userId);
-        Record_PhotoBodyEntity recordPhotoBody = recordService.getRecordPhotoBodyByPhotoId(photoId);
-        model.addAttribute("recordPhoto", recordPhoto);
-        model.addAttribute("recordPhotoBody", recordPhotoBody);
-        model.addAttribute("userId", userId);
-        return "record_photo_details";
-    }
 }
