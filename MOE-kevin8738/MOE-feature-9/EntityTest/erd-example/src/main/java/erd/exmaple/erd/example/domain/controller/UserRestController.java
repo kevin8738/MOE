@@ -1,9 +1,12 @@
 package erd.exmaple.erd.example.domain.controller;
 
+
 import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
 import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
-import erd.exmaple.erd.example.domain.service.UserService.UserJoinService;
+
+
+import erd.exmaple.erd.example.domain.service.UserService.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -11,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/users")
+@RequestMapping("/user")
 public class UserRestController {
-    private final UserJoinService userService;
+    private final UserService userService;
 
     @PostMapping("/join")
     public ResponseEntity<UserResponseDTO.JoinResultDTO> joinUser(@RequestBody @Valid UserRequestDTO.JoinDto joinDto) {

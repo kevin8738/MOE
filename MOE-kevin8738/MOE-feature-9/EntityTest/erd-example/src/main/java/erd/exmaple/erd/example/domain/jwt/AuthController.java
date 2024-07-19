@@ -1,5 +1,6 @@
 package erd.exmaple.erd.example.domain.jwt;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;

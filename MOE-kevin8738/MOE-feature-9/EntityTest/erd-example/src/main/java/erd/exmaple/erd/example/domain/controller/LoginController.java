@@ -2,13 +2,12 @@ package erd.exmaple.erd.example.domain.controller;
 
 import erd.exmaple.erd.example.domain.dto.ReissueTokenResponseDTO;
 import erd.exmaple.erd.example.domain.dto.UserDTO;
-import erd.exmaple.erd.example.domain.service.UserService.UserService;
+import erd.exmaple.erd.example.domain.service.UserService.UserServiceSocial;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,7 +17,7 @@ public class LoginController {
 
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
-    private final UserService userService;
+    private final UserServiceSocial userServiceSocial;
 
     // /user 경로로 접속 시 /user/login으로 리디렉션
     @GetMapping
@@ -40,8 +39,8 @@ public class LoginController {
     public ResponseEntity<?> kakaoLogin(@RequestBody ReissueTokenResponseDTO reissueTokenResponseDto) {
         log.info("Kakao login attempt");
         try {
-            long idToken = userService.getKakaoIdToken(reissueTokenResponseDto.getAccessToken());
-            UserDTO userDto = userService.findUserById(idToken);
+            long idToken = userServiceSocial.getKakaoIdToken(reissueTokenResponseDto.getAccessToken());
+            UserDTO userDto = userServiceSocial.findUserById(idToken);
             if (userDto != null) {
                 log.info("Kakao login successful for user id: {}", userDto.getId());
                 return ResponseEntity.ok(userDto);
@@ -61,8 +60,8 @@ public class LoginController {
     public ResponseEntity<?> naverLogin(@RequestBody ReissueTokenResponseDTO reissueTokenResponseDto) {
         log.info("Naver login attempt");
         try {
-            long idToken = userService.getNaverIdToken(reissueTokenResponseDto.getAccessToken());
-            UserDTO userDto = userService.findUserById(idToken);
+            long idToken = userServiceSocial.getNaverIdToken(reissueTokenResponseDto.getAccessToken());
+            UserDTO userDto = userServiceSocial.findUserById(idToken);
             if (userDto != null) {
                 log.info("Naver login successful for user id: {}", userDto.getId());
                 return ResponseEntity.ok(userDto);
@@ -82,8 +81,8 @@ public class LoginController {
     public ResponseEntity<?> googleLogin(@RequestBody ReissueTokenResponseDTO reissueTokenResponseDto) {
         log.info("Google login attempt");
         try {
-            long idToken = userService.getGoogleIdToken(reissueTokenResponseDto.getAccessToken());
-            UserDTO userDto = userService.findUserById(idToken);
+            long idToken = userServiceSocial.getGoogleIdToken(reissueTokenResponseDto.getAccessToken());
+            UserDTO userDto = userServiceSocial.findUserById(idToken);
             if (userDto != null) {
                 log.info("Google login successful for user id: {}", userDto.getId());
                 return ResponseEntity.ok(userDto);

@@ -3,13 +3,13 @@ package erd.exmaple.erd.example.domain.service.UserService;
 
 import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.converter.UserConverter;
-import erd.exmaple.erd.example.domain.repository.UserRepository;
+import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
 import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
-import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
 import erd.exmaple.erd.example.domain.enums.Ad;
 import erd.exmaple.erd.example.domain.enums.LoginStatus;
 import erd.exmaple.erd.example.domain.enums.Marketing;
+import erd.exmaple.erd.example.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,7 +20,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UserJoinServiceImpl implements UserJoinService{
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final UserConverter userConverter;
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); // PasswordEncoder 주입 // PasswordEncoder 주입
@@ -35,7 +35,7 @@ public class UserJoinServiceImpl implements UserJoinService{
                     .build();
         }
         // 핸드폰 번호 중복 확인
-        Optional<UserEntity> existingUser = userRepository.findByPhoneNumberUser(joinDto.getPhoneNumber());
+        Optional<UserEntity> existingUser = userRepository.findByPhoneNumber(joinDto.getPhoneNumber());
         if (existingUser.isPresent()) {
             return UserResponseDTO.JoinResultDTO.builder()
                     .isSuccess(false)
@@ -78,7 +78,7 @@ public class UserJoinServiceImpl implements UserJoinService{
 
     @Override
     public UserPhoneNumberCheckResultDTO checkPhoneNumber(String phoneNumber) {
-        Optional<UserEntity> existingUser = userRepository.findByPhoneNumberUser(phoneNumber);
+        Optional<UserEntity> existingUser = userRepository.findByPhoneNumber(phoneNumber);
         if (existingUser.isPresent()) {
             return UserPhoneNumberCheckResultDTO.builder()
                     .isSuccess(false)

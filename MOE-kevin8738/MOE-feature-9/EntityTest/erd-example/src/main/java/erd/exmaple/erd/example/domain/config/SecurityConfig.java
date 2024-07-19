@@ -1,7 +1,7 @@
 package erd.exmaple.erd.example.domain.config;
 
 import erd.exmaple.erd.example.domain.jwt.JwtRequestFilter;
-import erd.exmaple.erd.example.domain.service.UserService.CustomUserDetailService;
+import erd.exmaple.erd.example.domain.jwt.CustomUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +33,9 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/", "/user/login", "/user/kakao", "/user/naver", "/user/google", "/user/kakao/callback", "/user/naver/callback", "/user/google/callback", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                                //.requestMatchers("/", "/user/login", "/user/kakao", "/user/naver", "/user/google", "/user/kakao/callback", "/user/naver/callback", "/user/google/callback", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                                .requestMatchers("/", "/user/**","/user/join").permitAll() // "/" 및 "/api/users/**" 경로는 모든 사용자에게 허용합
+                                .requestMatchers( "/swagger-ui.html", "/swagger-ui/**","/v3/api-docs/**").permitAll()//스웨거 설정
                                 .anyRequest().authenticated()
                 )
                 .formLogin(formLogin ->
@@ -49,26 +51,30 @@ public class SecurityConfig {
                                 .deleteCookies("JSESSIONID")
                                 .logoutSuccessUrl("/user/login")
                 )
-                .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/user/kakao/callback", "/user/naver/callback", "/user/google/callback") // 특정 경로에 대해 CSRF 예외 추가
-                );
-        return http.build();
-    }
-    @Bean // 스프링 컨테이너에 SecurityFilterChain 빈을 등록
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { // HttpSecurity 객체를 사용하여 보안 설정을 구성
-        http
-                .authorizeHttpRequests((auth) -> auth // HTTP 요청에 대한 접근 권한 설정
-                        .requestMatchers("/", "/api/users/**","/api/users/join").permitAll() // "/" 및 "/api/users/**" 경로는 모든 사용자에게 허용합
-                        .requestMatchers( "/swagger-ui.html", "/swagger-ui/**","/v3/api-docs/**").permitAll()//스웨거 설정
-                        .requestMatchers("/auth").permitAll()
-                        .anyRequest().authenticated() // 그 외 모든 요청은 인증 필요
-                )
                 .cors(cors ->cors.disable())  // CORS 비활성화
-                .csrf(csrf -> csrf.disable())
+                .csrf(csrf -> csrf.disable()) // CSRF 비활성화
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // 세션 관리 설정을 STATELESS(무상태)로 지정합니다.
 
-        return http.build(); // 설정된 HttpSecurity 객체를 기반으로 SecurityFilterChain 객체를 생성하고 반환합니다.
+//                .csrf(csrf -> csrf
+//                        .ignoringRequestMatchers("/user/kakao/callback", "/user/naver/callback", "/user/google/callback") // 특정 경로에 대해 CSRF 예외 추가
+
+        return http.build();
     }
+//    @Bean // 스프링 컨테이너에 SecurityFilterChain 빈을 등록
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { // HttpSecurity 객체를 사용하여 보안 설정을 구성
+//        http
+//                .authorizeHttpRequests((auth) -> auth // HTTP 요청에 대한 접근 권한 설정
+//                        .requestMatchers("/", "/api/users/**","/api/users/join").permitAll() // "/" 및 "/api/users/**" 경로는 모든 사용자에게 허용합
+//                        .requestMatchers( "/swagger-ui.html", "/swagger-ui/**","/v3/api-docs/**").permitAll()//스웨거 설정
+//                        .requestMatchers("/auth").permitAll()
+//                        .anyRequest().authenticated() // 그 외 모든 요청은 인증 필요
+//                )
+//                .cors(cors ->cors.disable())  // CORS 비활성화
+//                .csrf(csrf -> csrf.disable()) // CSRF 비활성화
+//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // 세션 관리 설정을 STATELESS(무상태)로 지정합니다.
+//
+//        return http.build(); // 설정된 HttpSecurity 객체를 기반으로 SecurityFilterChain 객체를 생성하고 반환합니다.
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -80,14 +86,11 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return userDetailsService;
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        return userDetailsService;
+//    }
 }
-
-
-
 
 
 

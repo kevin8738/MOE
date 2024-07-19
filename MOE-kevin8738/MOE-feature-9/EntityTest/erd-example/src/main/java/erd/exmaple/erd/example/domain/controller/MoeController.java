@@ -1,7 +1,7 @@
 package erd.exmaple.erd.example.domain.controller;
 
 import erd.exmaple.erd.example.domain.dto.UserDTO;
-import erd.exmaple.erd.example.domain.service.UserService.UserService;
+import erd.exmaple.erd.example.domain.service.UserService.UserServiceSocial;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ public class MoeController {
 
     private static final Logger log = LoggerFactory.getLogger(MoeController.class);
 
-    private final UserService userService;
+    private final UserServiceSocial userServiceSocial;
 
     @GetMapping
     public String redirectToLogin() {
@@ -25,15 +25,9 @@ public class MoeController {
     @PostMapping("/main")
     @ResponseBody
     public UserDTO login(@RequestBody Long id) {
-        UserDTO userDto = userService.findUserById(id);
+        UserDTO userDto = userServiceSocial.findUserById(id);
         log.info("Main page accessed by user id: {}", userDto.getId());
         return userDto;
     }
 }
-
-
-
-
-
-
 
