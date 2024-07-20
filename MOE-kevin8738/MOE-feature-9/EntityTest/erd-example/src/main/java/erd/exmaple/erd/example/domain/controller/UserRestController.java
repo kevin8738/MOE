@@ -1,6 +1,7 @@
 package erd.exmaple.erd.example.domain.controller;
 
 
+import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.dto.*;
 
 
@@ -55,7 +56,7 @@ public class UserRestController {
         return ResponseEntity.ok(userService.checkPhoneNumber(phoneNumber));
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("{userId}")
     public ResponseEntity<UserResponseDTO> getUserById(@PathVariable Long userId) {
         UserResponseDTO user = userService.getUserById(userId);
         if (user == null) {

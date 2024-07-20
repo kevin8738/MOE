@@ -34,9 +34,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
                                 //.requestMatchers("/", "/user/login", "/user/kakao", "/user/naver", "/user/google", "/user/kakao/callback", "/user/naver/callback", "/user/google/callback", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                                .requestMatchers("/", "/user/**","/user/join").permitAll() // "/" 및 "/api/users/**" 경로는 모든 사용자에게 허용합
+                                .requestMatchers("/", "/user/**","/user/join","/user/login").permitAll() // "/" 및 "/api/users/**" 경로는 모든 사용자에게 허용합
                                 .requestMatchers( "/swagger-ui.html", "/swagger-ui/**","/v3/api-docs/**").permitAll()//스웨거 설정
-                                .anyRequest().authenticated()
+                                .anyRequest().permitAll()//임시허용 .authenticated()
                 )
                 .formLogin(formLogin ->
                         formLogin

@@ -19,7 +19,7 @@ public class LoginController {
 
     private final UserServiceSocial userServiceSocial;
 
-    // /user 경로로 접속 시 /user/login으로 리디렉션
+     //user 경로로 접속 시 /user/login으로 리디렉션
     @GetMapping
     public String redirectToLogin() {
         log.info("Redirecting to login page");

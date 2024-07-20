@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="" />
+    <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/UserRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/UserRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/PasswordChangeRequestDTO.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/PasswordResetRequestDTO.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserRestController.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserService.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserServiceImpl.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/UserRestController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,18 +52,23 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2jSVnPOzJC0mbHGFDmOltu2oncl" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "Gradle.Build erd-example.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -50,6 +76,8 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ErdExampleApplication.executor": "Run",
+    "git-widget-placeholder": "feature/100",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/kd690/Downloads/MOE-main/MOE-main/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/UserService",
     "node.js.detected.package.eslint": "true",
@@ -98,7 +126,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721380631912</updated>
-      <workItem from="1721380634479" duration="7555000" />
+      <workItem from="1721380634479" duration="9488000" />
+      <workItem from="1721413769505" duration="3791000" />
     </task>
     <servers />
   </component>
