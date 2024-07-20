@@ -4,28 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afe917af-27df-42ff-8e2a-3db1685077f1" name="변경" comment="변경">
       <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/RecordCreationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/RecordCreationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/converter/RecordCreationConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/converter/RecordCreationConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/dto/RecordResponseDTO$RecordResultDTO$RecordResultDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/dto/RecordResponseDTO$RecordResultDTO$RecordResultDTOBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/dto/RecordResponseDTO$RecordResultDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/dto/RecordResponseDTO$RecordResultDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordPhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordPhotoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/converter/RecordCreationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/converter/RecordCreationConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/dto/RecordResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/dto/RecordResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordCreationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordPhotoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordPhotoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordPhotoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService/RecordPhotoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +27,6 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="erd-example" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -57,33 +36,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="kevin8738" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2jNd0KawNkjxTItlM8o3jfQjgrP" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
-    "Gradle.erd-example 빌드.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -92,31 +59,18 @@
     "Spring Boot.ErdExampleApplication.executor": "Run",
     "git-widget-placeholder": "feature/100",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sickt/Downloads/MOE_Back/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/RecordService",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\sickt\Downloads\MOE_Back\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\service\RecordService" />
-      <recent name="C:\Users\sickt\Downloads\MOE_Back\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\dto" />
-      <recent name="C:\Users\sickt\Downloads\MOE_Back\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\resources\templates" />
-      <recent name="C:\Users\sickt\Downloads\MOE_Back\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain" />
-      <recent name="C:\Users\sickt\Downloads\MOE_Back\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\exception" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="erd.exmaple.erd.example.domain.converter" />
-      <recent name="erd.exmaple.erd.example.domain.controller" />
     </key>
   </component>
   <component name="RunManager">
@@ -136,51 +90,13 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="afe917af-27df-42ff-8e2a-3db1685077f1" name="변경" comment="" />
-      <created>1721231243881</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1721231243881</updated>
-      <workItem from="1721231245178" duration="6961000" />
-      <workItem from="1721363087353" duration="2911000" />
-      <workItem from="1721366179873" duration="48000" />
-      <workItem from="1721366433269" duration="6691000" />
     </task>
-    <task id="LOCAL-00001" summary="변경">
-      <option name="closed" value="true" />
-      <created>1721383572164</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1721383572164</updated>
-    </task>
-    <task id="LOCAL-00002" summary="변경">
-      <option name="closed" value="true" />
-      <created>1721384881292</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1721384881292</updated>
-    </task>
-    <task id="LOCAL-00003" summary="변경">
-      <option name="closed" value="true" />
-      <created>1721399055155</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1721399055155</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="변경" />
   </component>
 </project>

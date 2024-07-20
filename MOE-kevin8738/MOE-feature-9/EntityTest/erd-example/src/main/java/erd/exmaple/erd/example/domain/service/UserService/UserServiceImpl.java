@@ -3,9 +3,12 @@ package erd.exmaple.erd.example.domain.service.UserService;
 
 import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.converter.UserConverter;
+import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordChangeRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
 import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
+import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordFindRequestDTO;
+import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordSetRequestDTO;
 import erd.exmaple.erd.example.domain.enums.Ad;
 import erd.exmaple.erd.example.domain.enums.LoginStatus;
 import erd.exmaple.erd.example.domain.enums.Marketing;
@@ -17,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -97,4 +101,71 @@ public class UserServiceImpl implements UserService {
                 .map(userConverter::convert)
                 .orElse(null);
     }
+    @Override
+    public String resetPasswordByPhoneNumber(String phoneNumber) {
+        Optional<UserEntity> userOptional = userRepository.findByPhoneNumber(phoneNumber);
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            String newPassword = generateRandomPassword();
+            user.setPassword(passwordEncoder.encode(newPassword));
+            userRepository.save(user);
+            return newPassword;
+        }
+        return null;
+    }
+
+    private String generateRandomPassword() {
+        // 랜덤 비밀번호 생성 로직 (8자리 랜덤 문자열)
+        return UUID.randomUUID().toString().substring(0, 8);
+    }
+
+    // 비밀번호 변경 구현
+    @Override
+    public void changePassword(PasswordChangeRequestDTO passwordChangeRequest) throws Exception {
+        Optional<UserEntity> userOptional = userRepository.findByPhoneNumber(passwordChangeRequest.getPhoneNumber());
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            // 현재 비밀번호 검증
+            if (passwordEncoder.matches(passwordChangeRequest.getCurrentPassword(), user.getPassword())) {
+                // 새 비밀번호와 확인 비밀번호가 일치하는지 확인
+                if (!passwordChangeRequest.getNewPassword().equals(passwordChangeRequest.getConfirmPassword())) {
+                    throw new Exception("새 비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+                }
+                // 새 비밀번호 설정
+                user.setPassword(passwordEncoder.encode(passwordChangeRequest.getNewPassword()));
+                userRepository.save(user);
+            } else {
+                throw new Exception("현재 비밀번호가 일치하지 않습니다.");
+            }
+        } else {
+            throw new Exception("사용자를 찾을 수 없습니다.");
+        }
+    }
+
+    // 비밀번호 찾기 구현
+    @Override
+    public void findPassword(PasswordFindRequestDTO passwordFindRequest) throws Exception {
+        Optional<UserEntity> userOptional = userRepository.findByPhoneNumber(passwordFindRequest.getPhoneNumber());
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            // 인증번호 검증을 생략하고 새로운 비밀번호 설정
+            if (!passwordFindRequest.getPhoneNumber().equals(passwordFindRequest.getConfirmPhoneNumber())) {
+                throw new Exception("핸드폰 번호가 일치하지 않습니다.");
+            }
+            if (!passwordFindRequest.getNewPassword().equals(passwordFindRequest.getConfirmPassword())) {
+                throw new Exception("새 비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+            }
+            user.setPassword(passwordEncoder.encode(passwordFindRequest.getNewPassword()));
+            userRepository.save(user);
+            System.out.println("New password has been set.");
+        } else {
+            throw new Exception("사용자를 찾을 수 없습니다.");
+        }
+    }
+
+    private String generateTemporaryPassword() {
+        // 임시 비밀번호 생성 로직 (8자리 랜덤 문자열)
+        return UUID.randomUUID().toString().substring(0, 8);
+    }
 }
+

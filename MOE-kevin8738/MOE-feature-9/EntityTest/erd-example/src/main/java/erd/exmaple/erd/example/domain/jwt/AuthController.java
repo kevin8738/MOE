@@ -31,7 +31,7 @@ public class AuthController {
                     new UsernamePasswordAuthenticationToken(authRequest.getPhoneNumber(), authRequest.getPassword())
             );
         } catch (BadCredentialsException e) {
-            throw new Exception("Incorrect phone number or password", e);
+            throw new Exception("전화번호(아이디) 또는 비밀번호가 일치하지 않습니다", e);
         }
 
         final UserDetails userDetails = userDetailsService

@@ -3,9 +3,11 @@ package erd.exmaple.erd.example.domain.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +16,7 @@ import java.util.function.Function;
 @Component
 public class JwtUtil {
 
-    private String SECRET_KEY = "secret"; // JWT 서명을 위한 비밀 키
+    private final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256); // JWT 서명을 위한 비밀 키
 
     public String extractUsername(String token) {
         // JWT에서 사용자 이름을 추출합니다.
