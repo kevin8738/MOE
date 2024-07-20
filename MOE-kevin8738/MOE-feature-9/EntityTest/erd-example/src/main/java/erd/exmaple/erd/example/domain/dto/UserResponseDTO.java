@@ -35,8 +35,8 @@ public class UserResponseDTO {
         //LoginStatus status;
         boolean isSuccess; // 성공 여부
         String message; // 응답 메시지
-        //Ad ad; // 광고 수신 여부
-        //Marketing marketing; // 마케팅 수신 여부
+        Ad ad; // 광고 수신 여부
+        Marketing marketing; // 마케팅 수신 여부
 
     }
 }

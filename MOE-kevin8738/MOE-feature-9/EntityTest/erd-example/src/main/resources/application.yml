@@ -39,3 +39,6 @@ google:
   client-id: YOUR_GOOGLE_CLIENT_ID
   client-secret: YOUR_GOOGLE_CLIENT_SECRET
   redirect-uri: http://localhost:8080/user/google/callback
+
+jwt:
+  secret: THISISMOETESTKEYV0S2V5Rm9ySlRXdG9TZWNyZXQxM=

@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 public class SecurityConfig {
@@ -53,7 +54,8 @@ public class SecurityConfig {
                 )
                 .cors(cors ->cors.disable())  // CORS 비활성화
                 .csrf(csrf -> csrf.disable()) // CSRF 비활성화
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // 세션 관리 설정을 STATELESS(무상태)로 지정합니다.
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 세션 관리 설정을 STATELESS(무상태)로 지정합니다.
+                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class); // JWT 필터 등록
 
 //                .csrf(csrf -> csrf
 //                        .ignoringRequestMatchers("/user/kakao/callback", "/user/naver/callback", "/user/google/callback") // 특정 경로에 대해 CSRF 예외 추가

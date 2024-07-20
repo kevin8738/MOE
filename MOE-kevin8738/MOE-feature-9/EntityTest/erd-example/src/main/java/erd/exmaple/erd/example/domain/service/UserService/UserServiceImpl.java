@@ -1,5 +1,7 @@
 package erd.exmaple.erd.example.domain.service.UserService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.converter.UserConverter;
@@ -25,6 +27,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
     private final UserConverter userConverter;
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); // PasswordEncoder 주입 // PasswordEncoder 주입
@@ -63,8 +66,8 @@ public class UserServiceImpl implements UserService {
                 .phoneNumber(joinDto.getPhoneNumber())
                 .nickname(joinDto.getNickname())
                 .status(LoginStatus.ACTIVE)
-                .ad(Ad.ACTIVE)
-                .marketing(Marketing.ACTIVE)
+                .ad(joinDto.getAd() != null ? joinDto.getAd() : Ad.INACTIVE)
+                .marketing(joinDto.getMarketing() != null ? joinDto.getMarketing() : Marketing.INACTIVE)
                 .build();
 
         // 사용자 저장
@@ -167,5 +170,24 @@ public class UserServiceImpl implements UserService {
         // 임시 비밀번호 생성 로직 (8자리 랜덤 문자열)
         return UUID.randomUUID().toString().substring(0, 8);
     }
+
+
+    @Override
+    public Optional<UserEntity> findByPhoneNumber(String phoneNumber) {
+        logger.info("Finding user by phone number: " + phoneNumber);
+        return userRepository.findByPhoneNumber(phoneNumber);
+    }
+    @Override
+    public void updateNickname(Long userId, String newNickname) throws Exception {
+        Optional<UserEntity> userOptional = userRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            user.setNickname(newNickname);
+            userRepository.save(user);
+        } else {
+            throw new Exception("사용자를 찾을 수 없습니다.");
+        }
+    }
+
 }
 

@@ -4,6 +4,11 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.security.SignatureException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +20,15 @@ import java.util.function.Function;
 
 @Component
 public class JwtUtil {
+    private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
+    // 비밀 키를 애플리케이션 설정 파일에서 읽어옵니다.
+    @Value("${jwt.secret}")
+    private String secret;
 
-    private final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256); // JWT 서명을 위한 비밀 키
+    private Key getSigningKey() {
+        logger.debug("Using secret key: {}", secret); // 시크릿 키 로그 추가
+        return Keys.hmacShaKeyFor(secret.getBytes());
+    }
 
     public String extractUsername(String token) {
         // JWT에서 사용자 이름을 추출합니다.
@@ -35,7 +47,7 @@ public class JwtUtil {
 
     private Claims extractAllClaims(String token) {
         // JWT에서 모든 클레임을 추출합니다.
-        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
+        return Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token).getBody();
     }
 
     private Boolean isTokenExpired(String token) {
@@ -51,9 +63,13 @@ public class JwtUtil {
 
     private String createToken(Map<String, Object> claims, String subject) {
         // JWT를 생성하는 메서드입니다.
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
+        return Jwts.builder()
+                .setClaims(claims)
+                .setSubject(subject)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 만료 시간 설정 (10시간)
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .compact();
     }
 
     public Boolean validateToken(String token, UserDetails userDetails) {
