@@ -4,6 +4,7 @@ import erd.exmaple.erd.example.domain.PhotoEntity;
 import erd.exmaple.erd.example.domain.Record_PageEntity;
 import erd.exmaple.erd.example.domain.Record_PhotoEntity;
 import erd.exmaple.erd.example.domain.Record_PhotoBodyEntity;
+import erd.exmaple.erd.example.domain.dto.ExhibitionOrPopupDetailsDTO;
 import erd.exmaple.erd.example.domain.dto.RecordPageResponseDTO;
 import erd.exmaple.erd.example.domain.service.RecordService.RecordService;
 import lombok.RequiredArgsConstructor;
@@ -28,19 +29,10 @@ public class RecordLatestController {
     }
 
     @GetMapping("/{id}")
-    public String getExhibitionOrPopupDetails(@PathVariable Long userId, @PathVariable Long id, @RequestParam(defaultValue = "0") int page, Model model) {
-        Record_PageEntity recordPage = recordService.getRecordPageById(id, userId);
-        Page<Record_PhotoEntity> recordPhotos = recordService.getRecordPhotosByPageId(id, PageRequest.of(page, 4), userId);
-
-        PhotoEntity photo = recordService.getPhotoByRecordPage(recordPage); // 사진을 가져오는 서비스 메서드 추가
-
-        model.addAttribute("recordPage", recordPage);
-        model.addAttribute("recordPhotos", recordPhotos);
-        model.addAttribute("photo", photo); // 사진을 모델에 추가
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", recordPhotos.getTotalPages());
-        model.addAttribute("userId", userId);
-        return "exhibition_or_popup_details";
+    public ExhibitionOrPopupDetailsDTO getExhibitionOrPopupDetails(
+            @PathVariable Long userId,
+            @PathVariable Long id) {
+        return recordService.getExhibitionOrPopupDetails(userId, id);
     }
 
     @GetMapping("/{id}/photo/{photoId}")

@@ -4,6 +4,7 @@ import erd.exmaple.erd.example.domain.PhotoEntity;
 import erd.exmaple.erd.example.domain.Record_PageEntity;
 import erd.exmaple.erd.example.domain.Record_PhotoEntity;
 import erd.exmaple.erd.example.domain.Record_PhotoBodyEntity;
+import erd.exmaple.erd.example.domain.dto.ExhibitionOrPopupDetailsDTO;
 import erd.exmaple.erd.example.domain.dto.RecordPageResponseDTO;
 import erd.exmaple.erd.example.domain.repository.PhotoRepository;
 import erd.exmaple.erd.example.domain.repository.RecordPageRepository;
@@ -12,6 +13,7 @@ import erd.exmaple.erd.example.domain.repository.RecordPhotoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -30,8 +32,8 @@ public class RecordService {
         return recordPageRepository.findByIdAndUserId(id, userId).orElseThrow(() -> new RuntimeException("Record not found"));
     }
 
-    public Page<Record_PhotoEntity> getRecordPhotosByPageId(Long pageId, Pageable pageable, Long userId) {
-        return recordPhotoRepository.findByRecordPage_IdAndRecordPage_User_Id(pageId, userId, pageable);
+    public List<Record_PhotoEntity> getRecordPhotosByPageId(Long pageId, Long userId) {
+        return recordPhotoRepository.findByRecordPage_IdAndRecordPage_User_Id(pageId, userId);
     }
 
     public Record_PhotoEntity getRecordPhotoById(Long photoId, Long userId) {
@@ -45,11 +47,6 @@ public class RecordService {
             return photoRepository.findByPopupStore(recordPage.getPopupStore()).orElse(null);
         }
         return null;
-    }
-    public List<PhotoEntity> getPhotosByRecordPages(List<Record_PageEntity> recordPages) {
-        return recordPages.stream()
-                .map(this::getPhotoByRecordPage)
-                .collect(Collectors.toList());
     }
     public Record_PhotoBodyEntity getRecordPhotoBodyByPhotoId(Long photoId) {
         return recordPhotoBodyRepository.findByRecordPhoto_Id(photoId).orElseThrow(() -> new RuntimeException("Photo body not found"));
@@ -85,5 +82,23 @@ public class RecordService {
                     .build();
         }).collect(Collectors.toList());
         return new PageImpl<>(recordResponseDtos, pageable, recordPages.getTotalElements());
+    }
+    public ExhibitionOrPopupDetailsDTO getExhibitionOrPopupDetails(Long userId, Long id) {
+        Record_PageEntity recordPage = getRecordPageById(id, userId);
+        List<Record_PhotoEntity> recordPhotos = getRecordPhotosByPageId(id, userId);
+
+        PhotoEntity photo = getPhotoByRecordPage(recordPage);
+
+        List<String> recordPhotoUrls = recordPhotos.stream()
+                .map(Record_PhotoEntity::getPhotoUrl)
+                .collect(Collectors.toList());
+
+        return ExhibitionOrPopupDetailsDTO.builder()
+                .name(recordPage.getExhibition() != null ? recordPage.getExhibition().getName() : recordPage.getPopupStore().getName())
+                .photo(photo != null ? photo.getPhoto() : null)
+                .startDate((recordPage.getExhibition() != null) ? recordPage.getExhibition().getStartDate().atStartOfDay() : recordPage.getPopupStore().getStartDate().atStartOfDay())
+                .endDate((recordPage.getExhibition() != null) ? recordPage.getExhibition().getEndDate().atStartOfDay() : recordPage.getPopupStore().getEndDate().atStartOfDay())
+                .recordPhotos(recordPhotoUrls)
+                .build();
     }
 }
