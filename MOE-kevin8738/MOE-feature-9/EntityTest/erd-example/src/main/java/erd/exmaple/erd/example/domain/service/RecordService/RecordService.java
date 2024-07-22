@@ -6,6 +6,7 @@ import erd.exmaple.erd.example.domain.Record_PhotoEntity;
 import erd.exmaple.erd.example.domain.Record_PhotoBodyEntity;
 import erd.exmaple.erd.example.domain.dto.ExhibitionOrPopupDetailsDTO;
 import erd.exmaple.erd.example.domain.dto.RecordPageResponseDTO;
+import erd.exmaple.erd.example.domain.dto.RecordPhotoDetailsDTO;
 import erd.exmaple.erd.example.domain.repository.PhotoRepository;
 import erd.exmaple.erd.example.domain.repository.RecordPageRepository;
 import erd.exmaple.erd.example.domain.repository.RecordPhotoBodyRepository;
@@ -101,4 +102,14 @@ public class RecordService {
                 .recordPhotos(recordPhotoUrls)
                 .build();
     }
+    public RecordPhotoDetailsDTO getRecordPhotoDetails(Long userId, Long photoId) {
+        Record_PhotoEntity recordPhoto = getRecordPhotoById(photoId, userId);
+        Record_PhotoBodyEntity recordPhotoBody = getRecordPhotoBodyByPhotoId(photoId);
+
+        return RecordPhotoDetailsDTO.builder()
+                .recordPhoto(recordPhoto.getPhotoUrl())
+                .recordPhotoBody(recordPhotoBody.getBody())
+                .build();
+    }
+
 }
