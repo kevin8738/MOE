@@ -36,8 +36,6 @@ public class Popup_StoreEntity extends BaseEntity {
     @Column(nullable = false)
     private LocalDate endDate;
 
-    private LocalDateTime searchDate;
-
     @OneToMany(mappedBy = "popupStore",cascade = CascadeType.REMOVE, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<FollowEntity> FollowEntityList = new ArrayList<>();
 
@@ -50,4 +48,8 @@ public class Popup_StoreEntity extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "regionId")
     private RegionEntity region;
+
+    @OneToMany(mappedBy = "popupStore", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<SearchEntity> searchEntities = new ArrayList<>();
+
 }

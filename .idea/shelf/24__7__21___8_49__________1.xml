@@ -1,0 +1,14 @@
+<changelist name="24__7__21__오전_8_49,_업데이트_전에_커밋되지_않은_변경_내용_[변경]1" date="1721519862012" recycled="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/24__7__21__오전_8_49,_업데이트_전에_커밋되지_않은_변경_내용_[변경]1/shelved.patch" />
+  <option name="DESCRIPTION" value="24. 7. 21. 오전 8:49, 업데이트 전에 커밋되지 않은 변경 내용 [변경]" />
+  <binary>
+    <option name="BEFORE_PATH" value="MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/RecordService/RecordService.class" />
+    <option name="AFTER_PATH" value="MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/RecordService/RecordService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/24__7__21__오전_8_49,_업데이트_전에_커밋되지_않은_변경_내용_[변경]1/RecordService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/RecordOldestController.class" />
+    <option name="AFTER_PATH" value="MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/RecordOldestController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/24__7__21__오전_8_49,_업데이트_전에_커밋되지_않은_변경_내용_[변경]1/RecordOldestController.class" />
+  </binary>
+</changelist>

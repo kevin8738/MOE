@@ -63,5 +63,6 @@ public class UserEntity extends BaseEntity {
     @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<FollowEntity> FollowEntityList = new ArrayList<>();
 
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<SearchEntity> searchEntities = new ArrayList<>();
 }
