@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="검색API 오류 메세지 추가">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05b282a9-a55e-4d55-8607-ebe78d752a31.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/05b282a9-a55e-4d55-8607-ebe78d752a31.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/39b11b0d-cccf-48b2-9b66-ce24125d96f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/39b11b0d-cccf-48b2-9b66-ce24125d96f2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PageEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoBodyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoBodyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordLatestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordLatestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordPhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordPhotoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +46,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/100" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -50,38 +60,39 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.Build erd-example.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.erd-example 빌드.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ErdExampleApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/100&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kd690/Downloads/MOE-main/MOE-main/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/UserService&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build erd-example.executor": "Run",
+    "Gradle.erd-example 빌드.executor": "Run",
+    "Gradle.소스 다운로드.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ErdExampleApplication.executor": "Run",
+    "git-widget-placeholder": "feature/100",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/kd690/Downloads/MOE-main/MOE-main/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/UserService",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kd690\Downloads\MOE-main\MOE-main\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\service\UserService" />
@@ -122,7 +133,7 @@
       <workItem from="1721444709852" duration="575000" />
       <workItem from="1721472621600" duration="17019000" />
       <workItem from="1721546538061" duration="15228000" />
-      <workItem from="1721808949682" duration="338000" />
+      <workItem from="1721808949682" duration="4765000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -164,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721803698570</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="검색API 오류 메세지 추가">
+      <option name="closed" value="true" />
+      <created>1721809333267</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721809333267</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -29,16 +29,13 @@ public class RecordLatestController {
         return recordService.getPagedRecordsDto(PageRequest.of(pageable.getPageNumber(), 4), false, userId).getContent();
     }
 
-    @GetMapping("/{pageid}")
-    public ExhibitionOrPopupDetailsDTO getExhibitionOrPopupDetails(@PathVariable Long userId, @PathVariable Long id) {
-        return recordService.getExhibitionOrPopupDetails(userId, id);
+    @GetMapping("/{pageId}")
+    public ExhibitionOrPopupDetailsDTO getExhibitionOrPopupDetails(@PathVariable Long userId, @PathVariable Long pageId) {
+        return recordService.getExhibitionOrPopupDetails(userId, pageId);
     }
 
-    @GetMapping("/{pageid}/photo/{photoId}")
-    public RecordPhotoDetailsDTO getRecordPhotoDetails(
-            @PathVariable Long userId,
-            @PathVariable Long id,
-            @PathVariable Long photoId) {
+    @GetMapping("/{pageId}/photo/{photoId}")
+    public RecordPhotoDetailsDTO getRecordPhotoDetails(@PathVariable Long userId, @PathVariable Long pageId, @PathVariable Long photoId) {
         return recordService.getRecordPhotoDetails(userId, photoId);
     }
 }
