@@ -38,6 +38,8 @@ public class Popup_StoreEntity extends BaseEntity {
 
     private LocalDateTime searchDate;
 
+    private int likesCount = 0;
+
 
     @OneToMany(mappedBy = "popupStore",cascade = CascadeType.REMOVE, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<FollowEntity> FollowEntityList = new ArrayList<>();
@@ -54,5 +56,9 @@ public class Popup_StoreEntity extends BaseEntity {
 
     @OneToMany(mappedBy = "popupStore", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<SearchEntity> searchEntities = new ArrayList<>();
+
+    public void incrementLikesCount() {
+        this.likesCount++;
+    }
 
 }

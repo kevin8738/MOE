@@ -11,4 +11,5 @@ import java.util.List;
 public interface ExhibitionRepository extends JpaRepository<ExhibitionEntity, Long> {
     List<ExhibitionEntity> findByNameContaining(String keyword);
     Page<ExhibitionEntity> findAllByOrderByCreatedAtDesc(Pageable pageable);
+    Page<ExhibitionEntity> findAllByOrderByLikesCountDesc(Pageable pageable);
 }

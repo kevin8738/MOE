@@ -11,4 +11,5 @@ import java.util.List;
 public interface PopupStoreRepository extends JpaRepository<Popup_StoreEntity, Long> {
     List<Popup_StoreEntity> findByNameContaining(String keyword);
     Page<Popup_StoreEntity> findAllByOrderByCreatedAtDesc(Pageable pageable);
+    Page<Popup_StoreEntity> findAllByOrderByLikesCountDesc(Pageable pageable);
 }

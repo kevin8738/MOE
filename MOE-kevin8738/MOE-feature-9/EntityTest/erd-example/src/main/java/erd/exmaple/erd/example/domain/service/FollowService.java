@@ -52,6 +52,11 @@ public class FollowService {
         ExhibitionEntity exhibition = exhibitionRepository.findById(exhibitionId)
                 .orElseThrow(() -> new RuntimeException("Exhibition not found with ID: " + exhibitionId));
 
+        // 좋아요 수 증가
+        exhibition.incrementLikesCount();
+        exhibitionRepository.save(exhibition);
+
+
         FollowEntity follow = FollowEntity.builder()
                 .user(user)
                 .exhibition(exhibition)
@@ -67,6 +72,9 @@ public class FollowService {
                 .orElseThrow(() -> new RuntimeException("User not found with ID: " + userId));
         Popup_StoreEntity popupStore = popupStoreRepository.findById(popupStoreId)
                 .orElseThrow(() -> new RuntimeException("Popup store not found with ID: " + popupStoreId));
+        // 좋아요 수 증가
+        popupStore.incrementLikesCount();
+        popupStoreRepository.save(popupStore);
 
         FollowEntity follow = FollowEntity.builder()
                 .user(user)
