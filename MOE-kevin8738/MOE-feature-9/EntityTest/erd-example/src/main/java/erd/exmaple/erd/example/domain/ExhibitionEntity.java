@@ -37,6 +37,9 @@ public class ExhibitionEntity extends BaseEntity {
     @Column(nullable = false)
     private LocalDate endDate;
 
+    private LocalDateTime searchDate;
+
+
     @OneToMany(mappedBy = "exhibition",cascade = CascadeType.REMOVE, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<FollowEntity> FollowEntityList = new ArrayList<>();
 

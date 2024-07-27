@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Builder
@@ -18,4 +19,12 @@ public class ExhibitionDTO {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean heart;
+    private String place;
+    private String description;
+    private LocalDateTime searchDate;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private String regions;
+    private String district;
+
 }
