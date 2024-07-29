@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="검색API 오류 메세지 추가">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PageEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoBodyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoBodyEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/Record_PhotoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordLatestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordLatestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordPhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/RecordPhotoController.java" afterDir="false" />
-    </list>
+    <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="Record_PhotoBodyEntity 생성안되는 오류 수정" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +66,7 @@
     "git-widget-placeholder": "feature/100",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kd690/Downloads/MOE-main/MOE-main/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/UserService",
+    "last_opened_file_path": "C:/Users/sickt/Downloads/MOE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -133,7 +124,8 @@
       <workItem from="1721444709852" duration="575000" />
       <workItem from="1721472621600" duration="17019000" />
       <workItem from="1721546538061" duration="15228000" />
-      <workItem from="1721808949682" duration="4765000" />
+      <workItem from="1721808949682" duration="6580000" />
+      <workItem from="1722231403026" duration="1149000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -183,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721809333267</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Record_PhotoBodyEntity 생성안되는 오류 수정">
+      <option name="closed" value="true" />
+      <created>1721887182124</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721887182124</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +194,7 @@
     <MESSAGE value="검색 API 구현" />
     <MESSAGE value="검색페이지(최근 검색) API 구현" />
     <MESSAGE value="검색API 오류 메세지 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="검색API 오류 메세지 추가" />
+    <MESSAGE value="Record_PhotoBodyEntity 생성안되는 오류 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Record_PhotoBodyEntity 생성안되는 오류 수정" />
   </component>
 </project>

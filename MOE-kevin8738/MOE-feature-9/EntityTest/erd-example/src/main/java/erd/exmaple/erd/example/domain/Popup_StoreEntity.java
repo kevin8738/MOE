@@ -1,6 +1,8 @@
 package erd.exmaple.erd.example.domain;
 
 import erd.exmaple.erd.example.domain.common.BaseEntity;
+import erd.exmaple.erd.example.domain.enums.District;
+import erd.exmaple.erd.example.domain.enums.Region;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,11 +29,15 @@ public class Popup_StoreEntity extends BaseEntity {
     @Column(nullable = false,length = 100)
     private String place;
 
+    private String photoUrl;
+
     @Column(length = 100)
     private String description;
 
     @Column(nullable = false)
     private LocalDate startDate;
+
+    private boolean heart;
 
     @Column(nullable = false)
     private LocalDate endDate;
@@ -60,5 +66,13 @@ public class Popup_StoreEntity extends BaseEntity {
     public void incrementLikesCount() {
         this.likesCount++;
     }
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Region regions;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private District district;
 
 }
