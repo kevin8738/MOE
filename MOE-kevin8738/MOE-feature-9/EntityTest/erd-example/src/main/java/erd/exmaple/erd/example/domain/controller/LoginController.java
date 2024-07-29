@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
+import java.util.function.Function;
 
 @RestController
 @RequiredArgsConstructor
@@ -32,7 +33,6 @@ public class LoginController {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
     private final UserServiceSocial userServiceSocial;
-
     private final JwtBlacklistService jwtBlacklistService;
     private final JwtUtil jwtUtil;
 
@@ -53,8 +53,6 @@ public class LoginController {
         response.sendRedirect("/?token=" + jwtToken);
     }
 
-
-
     //user 경로로 접속 시 /user/login으로 리디렉션
     @GetMapping
     public String redirectToLogin() {
@@ -73,62 +71,55 @@ public class LoginController {
     @PostMapping(value = "/kakao")
     @ResponseBody
     public ResponseEntity<?> kakaoLogin(@RequestBody ReissueTokenResponseDTO reissueTokenResponseDto) {
-        log.info("Kakao login attempt");
-        try {
-            long idToken = userServiceSocial.getKakaoIdToken(reissueTokenResponseDto.getAccessToken());
-            UserDTO userDto = userServiceSocial.findUserById(idToken);
-            if (userDto != null) {
-                log.info("Kakao login successful for user id: {}", userDto.getId());
-                return ResponseEntity.ok(userDto);
-            } else {
-                log.warn("Kakao login failed: user not found");
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Kakao login failed: user not found");
+        return socialLogin(reissueTokenResponseDto.getAccessToken(), accessToken -> {
+            try {
+                return userServiceSocial.getKakaoIdToken(accessToken);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-        } catch (Exception e) {
-            log.error("Exception occurred while getting idToken: {}", e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Kakao login failed: internal server error");
-        }
+        });
     }
 
     // 네이버 로그인 처리
     @PostMapping(value = "/naver")
     @ResponseBody
     public ResponseEntity<?> naverLogin(@RequestBody ReissueTokenResponseDTO reissueTokenResponseDto) {
-        log.info("Naver login attempt");
-        try {
-            long idToken = userServiceSocial.getNaverIdToken(reissueTokenResponseDto.getAccessToken());
-            UserDTO userDto = userServiceSocial.findUserById(idToken);
-            if (userDto != null) {
-                log.info("Naver login successful for user id: {}", userDto.getId());
-                return ResponseEntity.ok(userDto);
-            } else {
-                log.warn("Naver login failed: user not found");
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Naver login failed: user not found");
+        return socialLogin(reissueTokenResponseDto.getAccessToken(), accessToken -> {
+            try {
+                return userServiceSocial.getNaverIdToken(accessToken);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-        } catch (Exception e) {
-            log.error("Exception occurred while getting idToken: {}", e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Naver login failed: internal server error");
-        }
+        });
     }
 
     // 구글 로그인 처리
     @PostMapping(value = "/google")
     @ResponseBody
     public ResponseEntity<?> googleLogin(@RequestBody ReissueTokenResponseDTO reissueTokenResponseDto) {
-        log.info("Google login attempt");
+        return socialLogin(reissueTokenResponseDto.getAccessToken(), accessToken -> {
+            try {
+                return userServiceSocial.getGoogleIdToken(accessToken);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+    private ResponseEntity<?> socialLogin(String accessToken, Function<String, Long> getIdTokenFunction) {
         try {
-            long idToken = userServiceSocial.getGoogleIdToken(reissueTokenResponseDto.getAccessToken());
+            long idToken = getIdTokenFunction.apply(accessToken);
             UserDTO userDto = userServiceSocial.findUserById(idToken);
             if (userDto != null) {
-                log.info("Google login successful for user id: {}", userDto.getId());
+                log.info("소셜 로그인 성공 for user id: {}", userDto.getId());
                 return ResponseEntity.ok(userDto);
             } else {
-                log.warn("Google login failed: user not found");
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Google login failed: user not found");
+                log.warn("소셜 로그인 실패: user not found");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("소셜 로그인 실패: user not found");
             }
         } catch (Exception e) {
             log.error("Exception occurred while getting idToken: {}", e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Google login failed: internal server error");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("소셜 로그인 실패: internal server error");
         }
     }
 
@@ -186,7 +177,6 @@ public class LoginController {
         }
     }
 
-
     @PostMapping("/social-logout")
     public ResponseEntity<String> logout(HttpServletRequest request) {
         String authHeader = request.getHeader("Authorization");
@@ -203,12 +193,9 @@ public class LoginController {
             }
         } else {
             log.warn("Authorization header is missing or does not start with Bearer");
-
         }
         SecurityContextHolder.clearContext();
         log.info("SecurityContextHolder cleared");
         return ResponseEntity.ok("로그아웃 성공");
     }
-
 }
-

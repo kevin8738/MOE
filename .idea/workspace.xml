@@ -4,7 +4,85 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="Record_PhotoBodyEntity 생성안되는 오류 수정" />
+    <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="Record_PhotoBodyEntity 생성안되는 오류 수정">
+      <change afterPath="$PROJECT_DIR$/.idea/MOE-feature-100.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/SocialAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/24__7__21___8_49__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/24__7__21___8_49__________.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/24__7__21___8_49__________1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/24__7__21___8_49__________1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/24__7__29___4_46_________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/24__7__29___4_46_________Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/UserService/UserServiceSocial.class" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/classes/java/main/erd/exmaple/erd/example/domain/service/UserService/UserServiceSocial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/CustomOAuth2UserService.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/CustomUserDetailService.class.uniqueId7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/ExhibitionEntity$ExhibitionEntityBuilder.class.uniqueId19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/ExhibitionEntity.class.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/ExhibitionRepository.class.uniqueId11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/ExhibitionResponseDTO.class.uniqueId33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/FollowEntity$FollowEntityBuilder.class.uniqueId40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/FollowEntity.class.uniqueId20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/FollowRepository.class.uniqueId47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/LoginController.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/MoeController.class.uniqueId32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/PhotoEntity$PhotoEntityBuilder.class.uniqueId8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/PhotoEntity.class.uniqueId31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/PhotoRepository.class.uniqueId21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/PopupStoreRepository.class.uniqueId29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/PopupStoreResponseDTO.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Popup_StoreEntity$Popup_StoreEntityBuilder.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Popup_StoreEntity.class.uniqueId23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordCreationConverter.class.uniqueId18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordCreationServiceImpl.class.uniqueId28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordLatestController.class.uniqueId30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordOldestController.class.uniqueId34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordPageRepository.class.uniqueId49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordPhotoBodyRepository.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordPhotoConverter.class.uniqueId44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordPhotoRepository.class.uniqueId22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordPhotoServiceImpl.class.uniqueId43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/RecordService.class.uniqueId37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Record_PageEntity$Record_PageEntityBuilder.class.uniqueId9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Record_PageEntity.class.uniqueId14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Record_PhotoBodyEntity$Record_PhotoBodyEntityBuilder.class.uniqueId42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Record_PhotoBodyEntity.class.uniqueId10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Record_PhotoEntity$Record_PhotoEntityBuilder.class.uniqueId46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/Record_PhotoEntity.class.uniqueId39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SearchController.class.uniqueId25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SearchEntity$SearchEntityBuilder.class.uniqueId24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SearchEntity.class.uniqueId12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SearchPageService.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SearchRepository.class.uniqueId50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SecurityConfig.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SpecExhibitionController.class.uniqueId16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SpecExhibitionService.class.uniqueId36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SpecPopupStoreController.class.uniqueId27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/SpecPopupStoreService.class.uniqueId45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserConverter.class.uniqueId13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserDTO.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserEntity$UserEntityBuilder.class.uniqueId15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserEntity.class.uniqueId41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserRepository.class.uniqueId17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserRestController.class.uniqueId35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserService.class.uniqueId48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserServiceImpl.class.uniqueId38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/compileTransaction/stash-dir/UserServiceSocial.class.uniqueId26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/UserService/UserServiceSocial.java" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/java/erd/exmaple/erd/example/domain/service/UserService/UserServiceSocial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/src/main/resources/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +140,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ErdExampleApplication.executor": "Run",
     "git-widget-placeholder": "feature/100",
     "ignore.virus.scanning.warn.message": "true",
@@ -86,9 +165,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kd690\Downloads\MOE-feature-100 (3)\MOE-feature-100\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain" />
+      <recent name="C:\Users\kd690\Downloads\MOE-feature-100 (3)\MOE-feature-100\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\service" />
+      <recent name="C:\Users\kd690\Downloads\MOE-feature-100 (3)\MOE-feature-100\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\resources" />
       <recent name="C:\Users\kd690\Downloads\MOE-main\MOE-main\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\service\UserService" />
       <recent name="C:\Users\kd690\Downloads\MOE-main\MOE-main\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\jwt" />
-      <recent name="C:\Users\kd690\Downloads\MOE-main\MOE-main\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="erd.exmaple.erd.example.domain.config" />
@@ -188,6 +269,23 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes" />
