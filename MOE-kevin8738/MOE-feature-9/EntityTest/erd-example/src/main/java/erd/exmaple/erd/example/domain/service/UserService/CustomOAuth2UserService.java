@@ -5,9 +5,12 @@ package erd.exmaple.erd.example.domain.service.UserService;
 
 import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.enums.Provider;
+import erd.exmaple.erd.example.domain.jwt.JwtRequestFilter;
 import erd.exmaple.erd.example.domain.jwt.JwtUtil;
 import erd.exmaple.erd.example.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -23,6 +26,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private final UserRepository userRepository;
     private final JwtUtil jwtUtil;
+    private static final Logger log = LoggerFactory.getLogger(CustomOAuth2UserService.class);
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -43,6 +47,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         UserEntity userEntity;
         if (userEntityOptional.isPresent()) {
             userEntity = userEntityOptional.get();
+            log.info("Existing user found: {}", userEntity);
         } else {
             userEntity = new UserEntity();
             userEntity.setProviderId(providerId);
@@ -52,10 +57,11 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
             userEntity.setPassword("defaultPassword");
             userEntity.setPhoneNumber(generateRandomPhoneNumber()); // 랜덤 더미 전화번호 설정
             userRepository.save(userEntity);
+            log.info("New user created: {}", userEntity);
         }
         // JWT 토큰 생성
-        String jwtToken = jwtUtil.generateToken(userEntity.getPhoneNumber());
-
+        String jwtToken = jwtUtil.generateToken(userEntity.getProviderId());
+        log.info("Generated JWT token: {}", jwtToken);
         // JWT 토큰을 OAuth2User에 추가하여 반환
         return new CustomOAuth2User(oAuth2User, jwtToken);
     }

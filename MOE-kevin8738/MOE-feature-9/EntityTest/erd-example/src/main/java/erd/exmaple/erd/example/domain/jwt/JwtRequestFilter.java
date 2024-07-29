@@ -59,17 +59,19 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             jwt = authorizationHeader.substring(7);
             log.info("Received JWT: {}", jwt);
             // JWT 토큰에서 사용자 이름을 추출
-            if (jwtBlacklistService.isBlacklisted(jwt)) {
-                logger.info("JWT token is blacklisted");
-                chain.doFilter(request, response);
-                return;
-            }
             try {
+                if (jwtBlacklistService.isBlacklisted(jwt)) {
+                    log.info("JWT token is blacklisted");
+                    chain.doFilter(request, response);
+                    return;
+                }
                 username = jwtUtil.extractUsername(jwt);
-                logger.info("Extracted username from JWT: " + username);
-            } catch (SignatureException e) {
-                logger.error("JWT signature does not match locally computed signature: {}", e);
+                log.info("Extracted username from JWT: {}", username);
+            } catch (Exception e) {
+                log.error("Error extracting username from JWT: ", e);
             }
+        } else {
+            log.warn("Authorization header is missing or does not start with Bearer");
         }
         // 사용자 이름이 존재하고 SecurityContext에 인증 정보가 없는 경우
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -77,21 +79,21 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
             // JWT 토큰이 유효한지 검증
             if (jwtUtil.validateToken(jwt, userDetails)) {
-                logger.info("JWT token is valid");
+                log.info("JWT token is valid");
                 // 유효한 토큰인 경우, Spring Security의 컨텍스트에 인증 정보를 설정
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 
-                logger.info("Authentication is set for user: " + username);
+                log.info("Authentication is set for user: " + username);
             } else {
-                logger.info("JWT token is not valid");
+                log.info("JWT token is not valid");
             }
         } else {
-            logger.info("Username is null or authentication is already set");
+            log.info("Username is null or authentication is already set");
         }
 
-        logger.info("Authentication: " + SecurityContextHolder.getContext().getAuthentication());
+        log.info("Authentication: " + SecurityContextHolder.getContext().getAuthentication());
         // 다음 필터를 호출.
         chain.doFilter(request, response);
     }

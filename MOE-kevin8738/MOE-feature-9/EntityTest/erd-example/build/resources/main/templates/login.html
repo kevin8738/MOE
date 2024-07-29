@@ -6,14 +6,38 @@
     <title>Social Login Test</title>
     <script>
         async function socialLogin(provider) {
-            // Redirect to the provider's login page
             window.location.href = `/oauth2/authorization/${provider}`;
         }
+        async function fetchWithAuth(url) {
+            const token = localStorage.getItem('jwtToken');
+            if (!token) {
+                alert('No token found. Please login first.');
+                return;
+            }
+
+            const response = await fetch(url, {
+                method: 'GET', // or 'POST'
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+            } else {
+                alert('Request failed.');
+            }
+        }
+
+        // 사용 예시
+        fetchWithAuth('/some-protected-endpoint');
 
         async function logout() {
             const token = localStorage.getItem('jwtToken');
             if (!token) {
-                alert('No token found. Please login first.');
+                showMessage('No token found. Please login first.');
                 return;
             }
 
@@ -27,16 +51,16 @@
 
             if (response.ok) {
                 localStorage.removeItem('jwtToken');
-                alert('Logout successful.');
+                showMessage('Logout successful.');
             } else {
-                alert('Logout failed.');
+                showMessage('Logout failed.');
             }
         }
 
         async function checkAuthentication() {
             const token = localStorage.getItem('jwtToken');
             if (!token) {
-                alert('No token found. Please login first.');
+                showMessage('No token found. Please login first.');
                 return;
             }
 
@@ -50,34 +74,28 @@
 
             if (response.ok) {
                 const text = await response.text();
-                alert(text);
+                showMessage(text);
             } else {
-                alert('Authentication check failed.');
+                showMessage('Authentication check failed.');
             }
         }
 
-        // Listen for messages from the OAuth2 callback
-        window.addEventListener('message', function(event) {
-            if (event.origin !== window.location.origin) {
-                return;
-            }
-            const token = event.data.token;
-            if (token) {
-                localStorage.setItem('jwtToken', token);
-                alert('Login successful. Token saved.');
-            }
-        });
+        function showMessage(message) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+        }
 
-        // Extract JWT token from URL if present
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             const token = urlParams.get('token');
             if (token) {
                 localStorage.setItem('jwtToken', token);
-                alert('Login successful. Token saved.');
+                showMessage('Login successful. Token saved.');
+
+                window.history.replaceState(null, null, window.location.pathname);
             }
         }
-
     </script>
 </head>
 <body>
@@ -89,5 +107,7 @@
 <h2>Actions</h2>
 <button onclick="checkAuthentication()">Check Authentication</button>
 <button onclick="logout()">Logout</button>
+
+<div id="message" style="display: none; color: red;"></div>
 </body>
 </html>

@@ -8,9 +8,11 @@ import erd.exmaple.erd.example.domain.service.UserService.CustomOAuth2User;
 import erd.exmaple.erd.example.domain.service.UserService.UserServiceSocial;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -19,6 +21,8 @@ import org.springframework.security.oauth2.client.authentication.OAuth2Authentic
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+
+import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
@@ -33,15 +37,22 @@ public class LoginController {
     private final JwtUtil jwtUtil;
 
     @GetMapping("/oauth2/callback/{provider}")
-    public ResponseEntity<UserDTO> oauth2Callback(@PathVariable String provider, OAuth2AuthenticationToken authentication) {
+    public void oauth2Callback(@PathVariable String provider, OAuth2AuthenticationToken authentication, HttpServletResponse response) throws IOException {
+        if (authentication == null) {
+            response.sendRedirect("/login?error");
+            return;
+        }
+
         CustomOAuth2User customOAuth2User = (CustomOAuth2User) authentication.getPrincipal();
         UserDTO userDTO = userServiceSocial.processOAuth2User((OAuth2User) customOAuth2User);
 
         // JWT 토큰을 응답에 포함
-        return ResponseEntity.ok()
-                .header("Authorization", "Bearer " + customOAuth2User.getJwtToken())
-                .body(userDTO);
+        String jwtToken = customOAuth2User.getJwtToken();
+
+        // 토큰을 URL 파라미터로 리디렉션
+        response.sendRedirect("/?token=" + jwtToken);
     }
+
 
 
     //user 경로로 접속 시 /user/login으로 리디렉션

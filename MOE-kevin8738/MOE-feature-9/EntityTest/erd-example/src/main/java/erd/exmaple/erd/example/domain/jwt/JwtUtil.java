@@ -85,6 +85,8 @@ public class JwtUtil {
     public Boolean validateToken(String token, UserDetails userDetails) {
         // JWT가 유효한지 검증합니다.
         final String username = extractUsername(token);
-        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+        boolean isValid = (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+        logger.info("Token validation result: {}", isValid);
+        return isValid;
     }
 }

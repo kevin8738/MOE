@@ -1,12 +1,13 @@
 spring:
   datasource:
+
+    url: jdbc:mysql://localhost:3306/test11
+    username: root
+    password: adsx123
 #    url: jdbc:mysql://moe-db-1.cdgugwuowxj4.ap-northeast-2.rds.amazonaws.com:3306/moe
 #    username: root
 #    password: kevin1104
-     url: jdbc:mysql://localhost:3306/test11
-     username: root
-     password: adsx123
-     driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
       mode: never
@@ -86,3 +87,5 @@ spring:
 
 jwt:
   secret: THISISMOETESTKEYV0S2V5Rm9ySlRXdG9TZWNyZXQxM=
+
+
