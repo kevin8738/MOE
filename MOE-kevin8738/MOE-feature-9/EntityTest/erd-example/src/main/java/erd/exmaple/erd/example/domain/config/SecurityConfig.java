@@ -1,8 +1,10 @@
 package erd.exmaple.erd.example.domain.config;
 
+import erd.exmaple.erd.example.domain.service.UserService.CustomOAuth2UserService;
 import erd.exmaple.erd.example.domain.jwt.JwtRequestFilter;
 import erd.exmaple.erd.example.domain.jwt.CustomUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,13 +19,18 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 public class SecurityConfig {
+
+
     @Autowired
+    @Qualifier("customUserDetailService")
     private UserDetailsService customUserDetailsService; // 사용자 세부 정보를 로드하기 위한 서비스
 
     @Autowired
     private JwtRequestFilter jwtRequestFilter; // JWT 요청 필터
 
     private final CustomUserDetailService userDetailsService;
+    @Autowired
+    private CustomOAuth2UserService customOAuth2UserService; // CustomOAuth2UserService 주입
 
     public SecurityConfig(CustomUserDetailService userDetailsService) {
         this.userDetailsService = userDetailsService;
@@ -52,6 +59,32 @@ public class SecurityConfig {
                                 .deleteCookies("JSESSIONID")
                                 .logoutSuccessUrl("/user/login")
                 )
+                .oauth2Login(oauth2Login ->
+                        oauth2Login
+                                .loginPage("/login.html")
+                                .authorizationEndpoint(authorizationEndpoint ->
+                                        authorizationEndpoint
+                                                .baseUri("/oauth2/authorization")
+                                )
+                                .redirectionEndpoint(redirectionEndpoint ->
+                                        redirectionEndpoint
+                                                .baseUri("/login/oauth2/code/*")
+                                )
+                                .userInfoEndpoint(userInfoEndpoint ->
+                                        userInfoEndpoint
+                                                .userService(customOAuth2UserService)
+                                )
+                )
+//                .oauth2Login(oauth2Login ->
+//                        oauth2Login
+//                                .loginPage("/login.html")
+//                                .defaultSuccessUrl("/Moe/main", true)
+//                                .failureUrl("/user/login?error=true")
+//                                .userInfoEndpoint(userInfoEndpoint ->
+//                                        userInfoEndpoint
+//                                                .userService(customOAuth2UserService)
+//                                )
+//                )
                 .cors(cors ->cors.disable())  // CORS 비활성화
                 .csrf(csrf -> csrf.disable()) // CSRF 비활성화
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 세션 관리 설정을 STATELESS(무상태)로 지정합니다.
@@ -62,21 +95,7 @@ public class SecurityConfig {
 
         return http.build();
     }
-//    @Bean // 스프링 컨테이너에 SecurityFilterChain 빈을 등록
-//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { // HttpSecurity 객체를 사용하여 보안 설정을 구성
-//        http
-//                .authorizeHttpRequests((auth) -> auth // HTTP 요청에 대한 접근 권한 설정
-//                        .requestMatchers("/", "/api/users/**","/api/users/join").permitAll() // "/" 및 "/api/users/**" 경로는 모든 사용자에게 허용합
-//                        .requestMatchers( "/swagger-ui.html", "/swagger-ui/**","/v3/api-docs/**").permitAll()//스웨거 설정
-//                        .requestMatchers("/auth").permitAll()
-//                        .anyRequest().authenticated() // 그 외 모든 요청은 인증 필요
-//                )
-//                .cors(cors ->cors.disable())  // CORS 비활성화
-//                .csrf(csrf -> csrf.disable()) // CSRF 비활성화
-//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // 세션 관리 설정을 STATELESS(무상태)로 지정합니다.
-//
-//        return http.build(); // 설정된 HttpSecurity 객체를 기반으로 SecurityFilterChain 객체를 생성하고 반환합니다.
-//    }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -88,10 +107,7 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        return userDetailsService;
-//    }
+
 }
 
 

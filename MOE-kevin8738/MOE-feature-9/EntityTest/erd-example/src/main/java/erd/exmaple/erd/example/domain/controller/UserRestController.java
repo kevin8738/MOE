@@ -10,7 +10,9 @@ import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordFindRequestDTO;
 import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordSetRequestDTO;
 import erd.exmaple.erd.example.domain.jwt.AuthRequest;
 import erd.exmaple.erd.example.domain.jwt.AuthResponse;
+import erd.exmaple.erd.example.domain.jwt.JwtBlacklistService;
 import erd.exmaple.erd.example.domain.service.UserService.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -34,6 +36,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -49,7 +52,8 @@ public class UserRestController {
     private JwtUtil jwtUtil;
     @Autowired
     private UserDetailsService userDetailsService;
-
+    @Autowired
+    private JwtBlacklistService jwtBlacklistService;
 
 
     @PostMapping("/join")
@@ -82,24 +86,24 @@ public class UserRestController {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authRequest.getPhoneNumber(), authRequest.getPassword())
             );
-        //} catch (BadCredentialsException e) {
+            //} catch (BadCredentialsException e) {
             // 인증 실패 시 예외 처리
             //throw new Exception("핸드폰번호(아이디) 또는 비밀번호 오류", e);
-        //}
+            //}
 
-        // 인증된 사용자 정보 로드
-        final UserDetails userDetails = userDetailsService
-                .loadUserByUsername(authRequest.getPhoneNumber());
+            // 인증된 사용자 정보 로드
+            final UserDetails userDetails = userDetailsService
+                    .loadUserByUsername(authRequest.getPhoneNumber());
 
-        // JWT 토큰 생성
-        final String jwt = jwtUtil.generateToken(userDetails);
+            // JWT 토큰 생성
+            final String jwt = jwtUtil.generateToken(userDetails);
 
-        // 성공적인 로그인에 대한 로그 추가
-        System.out.println("User " + authRequest.getPhoneNumber() + " successfully logged in.");
+            // 성공적인 로그인에 대한 로그 추가
+            System.out.println("User " + authRequest.getPhoneNumber() + " successfully logged in.");
 
 
-        // 생성된 JWT 토큰을 응답으로 반환
-        return ResponseEntity.ok(new AuthResponse(jwt,"로그인 성공"));
+            // 생성된 JWT 토큰을 응답으로 반환
+            return ResponseEntity.ok(new AuthResponse(jwt, "로그인 성공"));
         } catch (BadCredentialsException e) {
             // 인증 실패 시 예외 처리 및 실패 응답 반환
             System.out.println("User " + authRequest.getPhoneNumber() + " failed to log in.");
@@ -123,11 +127,14 @@ public class UserRestController {
 
     // 비밀번호 변경 엔드포인트
     @PostMapping("/my-page/change-password")
-    public ResponseEntity<String> changePassword(
-            @RequestBody @Valid PasswordChangeRequestDTO passwordChangeRequest) {
+    public ResponseEntity<String> changePassword(@RequestBody @Valid PasswordChangeRequestDTO passwordChangeRequest) {
         try {
+            // SecurityContextHolder에서 인증된 사용자 정보 가져오기
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String phoneNumber = authentication.getName();
+            passwordChangeRequest.setPhoneNumber(phoneNumber); // 요청 DTO에 핸드폰 번호 설정
             userService.changePassword(passwordChangeRequest);
-            return ResponseEntity.ok("비밀번호 변경에 성공하였습니다..");
+            return ResponseEntity.ok("비밀번호 변경에 성공하였습니다.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
@@ -157,6 +164,46 @@ public class UserRestController {
         }
     }
 
+    // 회원탈퇴 엔드포인트
+    @PostMapping("/my-page/withdraw")
+    public ResponseEntity<String> withdrawUser() {
+        try {
+            // SecurityContextHolder에서 인증된 사용자 정보 가져오기
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String phoneNumber = authentication.getName();
+            userService.withdrawUser(phoneNumber);
+            return ResponseEntity.ok("회원탈퇴가 요청되었습니다. 7일 후에 탈퇴가 완료됩니다. 7일 후에는 복구할 수 없습니다.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    // 닉네임 조회 엔드포인트
+    @GetMapping("/my-page/search")
+    public ResponseEntity<List<String>> searchUsers(@RequestParam String keyword) {
+        try {
+            List<String> nicknames = userService.searchUsersByNickname(keyword);
+            return ResponseEntity.ok(nicknames);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+    }
+
+    // 로그아웃 엔드포인트
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String jwt = authHeader.substring(7);
+            jwtBlacklistService.addToBlacklist(jwt);
+        }
+        SecurityContextHolder.clearContext();
+        return ResponseEntity.ok("로그아웃 성공");
+    }
+}
+
+
+
 
 
 //    @PostMapping("/my-page/change-nickname")
@@ -178,9 +225,9 @@ public class UserRestController {
 //    }
 
 
-    }
 
-    //    @PostMapping("/reset-password")
+
+//    @PostMapping("/reset-password")
 //    public ResponseEntity<String> resetPassword(@RequestBody PasswordResetRequestDTO request) {
 //        String phoneNumber = request.getPhoneNumber();
 //        String confirmPhoneNumber = request.getConfirmPhoneNumber();

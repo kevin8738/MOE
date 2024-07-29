@@ -4,8 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import io.jsonwebtoken.security.SignatureException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,7 +30,14 @@ public class JwtUtil {
 
     public String extractUsername(String token) {
         // JWT에서 사용자 이름을 추출합니다.
-        return extractClaim(token, Claims::getSubject);
+        try {
+            String username = extractClaim(token, Claims::getSubject);
+            logger.info("Extracted username: {}", username);
+            return username;
+        } catch (Exception e) {
+            logger.error("Error extracting username from token: ", e);
+            return null;
+        }
     }
 
     public Date extractExpiration(String token) {
@@ -45,7 +50,7 @@ public class JwtUtil {
         return claimsResolver.apply(claims);
     }
 
-    private Claims extractAllClaims(String token) {
+    public Claims extractAllClaims(String token) {
         // JWT에서 모든 클레임을 추출합니다.
         return Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token).getBody();
     }
@@ -54,11 +59,16 @@ public class JwtUtil {
         // JWT가 만료되었는지 확인합니다.
         return extractExpiration(token).before(new Date());
     }
-
+    // UserDetails 객체를 인수로 받아 JWT 토큰 생성
     public String generateToken(UserDetails userDetails) {
         // JWT를 생성합니다.
         Map<String, Object> claims = new HashMap<>();
         return createToken(claims, userDetails.getUsername());
+    }
+    // 사용자 이름을 인수로 받아 JWT 토큰 생성
+    public String generateToken(String username) {
+        Map<String, Object> claims = new HashMap<>();
+        return createToken(claims, username);
     }
 
     private String createToken(Map<String, Object> claims, String subject) {

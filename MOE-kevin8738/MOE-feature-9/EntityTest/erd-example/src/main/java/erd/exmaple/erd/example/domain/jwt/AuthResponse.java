@@ -1,10 +1,6 @@
 package erd.exmaple.erd.example.domain.jwt;
 
 
-import lombok.Getter;
-import lombok.Setter;
-
-
 public class AuthResponse {
     private final String jwt;
     private final String message;

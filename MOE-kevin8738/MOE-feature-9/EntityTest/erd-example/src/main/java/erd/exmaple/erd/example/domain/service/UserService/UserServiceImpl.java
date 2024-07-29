@@ -1,32 +1,32 @@
 package erd.exmaple.erd.example.domain.service.UserService;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.converter.UserConverter;
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordChangeRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
 import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
+import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordChangeRequestDTO;
 import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordFindRequestDTO;
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordSetRequestDTO;
 import erd.exmaple.erd.example.domain.enums.Ad;
 import erd.exmaple.erd.example.domain.enums.LoginStatus;
 import erd.exmaple.erd.example.domain.enums.Marketing;
 import erd.exmaple.erd.example.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService  {
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
     private final UserConverter userConverter;
@@ -189,5 +189,25 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-}
+    @Override
+    public void withdrawUser(String phoneNumber) throws Exception {
+        Optional<UserEntity> userOptional = userRepository.findByPhoneNumber(phoneNumber);
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            user.setStatus(LoginStatus.INACTIVE);
+            userRepository.save(user);
+        } else {
+            throw new Exception("사용자를 찾을 수 없습니다.");
+        }
+    }
 
+    @Override
+    public List<String> searchUsersByNickname(String keyword) {
+        List<UserEntity> users = userRepository.findByNicknameContaining(keyword);
+        List<String> nicknames = new ArrayList<>();
+        for (UserEntity user : users) {
+            nicknames.add(user.getNickname());
+        }
+        return nicknames;
+    }
+}

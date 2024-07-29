@@ -4,10 +4,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.dto.UserDTO;
+import erd.exmaple.erd.example.domain.enums.Provider;
 import erd.exmaple.erd.example.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -24,12 +26,32 @@ public class UserServiceSocial {
     @Autowired
     private final UserRepository userRepository;
 
-    @Value("${kakao.rest-api-key}")
-    private String kakaoRestApiKey;
+    public UserDTO processOAuth2User(OAuth2User oAuth2User) {
+        String providerId = oAuth2User.getName();
+        Optional<UserEntity> userEntityOptional = userRepository.findByProviderId(providerId);
+
+        UserEntity userEntity;
+        if (userEntityOptional.isPresent()) {
+            userEntity = userEntityOptional.get();
+        } else {
+            // 새로운 사용자 생성
+            userEntity = new UserEntity();
+            userEntity.setProviderId(providerId);
+            userEntity.setNickname(oAuth2User.getAttribute("name"));
+            userEntity.setProvider(Provider.valueOf(oAuth2User.getAttribute("provider")));
+            userRepository.save(userEntity);
+        }
+
+        return UserDTO.toUserDTO(userEntity);
+    }
+
+
+    @Value("a090ed16ad7cf9039104c87a03989c38") //client id kakao
+    private String restApiKey;
 
     public Long getKakaoIdToken(String accessToken) throws Exception {
         String reqURL = "https://kapi.kakao.com/v2/user/me";
-        return getIdTokenFromProvider(accessToken, reqURL, "id", kakaoRestApiKey);
+        return getIdTokenFromProvider(accessToken, reqURL, "id", restApiKey);
     }
 
     public Long getNaverIdToken(String accessToken) throws Exception {

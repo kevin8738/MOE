@@ -6,7 +6,10 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,10 +24,15 @@ import java.io.IOException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
+    @Qualifier("customUserDetailService")
     private UserDetailsService userDetailsService;
+
+    private static final Logger log = LoggerFactory.getLogger(JwtRequestFilter.class);
 
     @Autowired
     private JwtUtil jwtUtil;
+    @Autowired
+    private JwtBlacklistService jwtBlacklistService;
 
 
 /*     *이 메서드는 각 요청마다 실행되며 JWT 토큰을 검사하여 유효한 경우
@@ -49,13 +57,18 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             // "Bearer " 이후의 JWT 토큰을 추출
             jwt = authorizationHeader.substring(7);
+            log.info("Received JWT: {}", jwt);
             // JWT 토큰에서 사용자 이름을 추출
+            if (jwtBlacklistService.isBlacklisted(jwt)) {
+                logger.info("JWT token is blacklisted");
+                chain.doFilter(request, response);
+                return;
+            }
             try {
                 username = jwtUtil.extractUsername(jwt);
                 logger.info("Extracted username from JWT: " + username);
             } catch (SignatureException e) {
                 logger.error("JWT signature does not match locally computed signature: {}", e);
-
             }
         }
         // 사용자 이름이 존재하고 SecurityContext에 인증 정보가 없는 경우
