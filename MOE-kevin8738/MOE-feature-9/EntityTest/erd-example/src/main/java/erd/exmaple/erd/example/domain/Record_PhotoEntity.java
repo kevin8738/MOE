@@ -25,7 +25,7 @@ public class Record_PhotoEntity extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recordPageId")
-    private Record_PageEntity recordPage; // 필드 이름을 확인합니다.
+    private Record_PageEntity recordPage;
 
     @OneToMany(mappedBy = "recordPhoto", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Record_PhotoBodyEntity> bodyList = new ArrayList<>();

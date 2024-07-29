@@ -18,7 +18,7 @@ import java.util.List;
 @Setter
 @Builder
 @Table(name = "user")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 public class UserEntity extends BaseEntity {
 
@@ -32,8 +32,11 @@ public class UserEntity extends BaseEntity {
     @Column(name = "phone_number", nullable = false,length = 11)
     private String phoneNumber;
 
-    @Column(nullable = false,length = 100)
+    @Column(nullable = false,length = 100) //일단 널값허용
     private String nickname;
+
+    @Column(length = 255) //소셜로그인시 필요할 것 같아서 추가
+    private String email;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(50)")
@@ -63,5 +66,13 @@ public class UserEntity extends BaseEntity {
     @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<FollowEntity> FollowEntityList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<SearchEntity> searchEntities = new ArrayList<>();
 
+    @PrePersist
+    protected void onCreate() {
+        if (this.password == null) {
+            this.password = "defaultPassword"; // 더미 비밀번호 설정
+        }
+    }
 }

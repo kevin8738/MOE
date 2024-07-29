@@ -1,9 +1,17 @@
 package erd.exmaple.erd.example.domain.dto;
 
 import erd.exmaple.erd.example.domain.Popup_StoreEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PopupStoreResponseDTO {
     private Long id;
     private String name;

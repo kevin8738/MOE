@@ -1,0 +1,18 @@
+Index: MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring:\r\n  datasource:\r\n    url: jdbc:mysql://moe-db-1.cdgugwuowxj4.ap-northeast-2.rds.amazonaws.com:3306/moe\r\n    username: root\r\n    password: kevin1104\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n  sql:\r\n    init:\r\n      mode: never\r\n  jpa:\r\n    properties:\r\n      hibernate:\r\n        dialect: org.hibernate.dialect.MySQL8Dialect\r\n        show_sql: true\r\n        format_sql: true\r\n        use_sql_comments: true\r\n        hbm2ddl:\r\n          auto: update\r\n        default_batch_fetch_size: 1000\r\n  logging:\r\n    level:\r\n      org.hibernate.SQL: DEBUG\r\n      org.hibernate.type: TRACE\r\n  thymeleaf:\r\n    prefix: classpath:/templates/\r\n    suffix: .html\r\n    cache: false\r\nkakao:\r\n  client-id: YOUR_KAKAO_CLIENT_ID\r\n  client-secret: YOUR_KAKAO_CLIENT_SECRET\r\n  redirect-uri: http://localhost:8080/user/kakao/callback\r\n\r\nnaver:\r\n  client-id: YOUR_NAVER_CLIENT_ID\r\n  client-secret: YOUR_NAVER_CLIENT_SECRET\r\n  redirect-uri: http://localhost:8080/user/naver/callback\r\n\r\ngoogle:\r\n  client-id: YOUR_GOOGLE_CLIENT_ID\r\n  client-secret: YOUR_GOOGLE_CLIENT_SECRET\r\n  redirect-uri: http://localhost:8080/user/google/callback
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/application.yml b/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/application.yml
+--- a/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/application.yml	(revision 6f3960deedd001b1fd6e070a20b9bdb37479713f)
++++ b/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example/build/resources/main/application.yml	(date 1721480039281)
+@@ -1,6 +1,6 @@
+ spring:
+   datasource:
+-    url: jdbc:mysql://moe-db-1.cdgugwuowxj4.ap-northeast-2.rds.amazonaws.com:3306/moe
++    url: jdbc:mysql://localhost:3306/moe
+     username: root
+     password: kevin1104
+     driver-class-name: com.mysql.cj.jdbc.Driver

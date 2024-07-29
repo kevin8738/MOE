@@ -1,13 +1,17 @@
 package erd.exmaple.erd.example.domain.jwt;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -30,7 +34,7 @@ public class AuthController {
                     new UsernamePasswordAuthenticationToken(authRequest.getPhoneNumber(), authRequest.getPassword())
             );
         } catch (BadCredentialsException e) {
-            throw new Exception("Incorrect phone number or password", e);
+            throw new Exception("전화번호(아이디) 또는 비밀번호가 일치하지 않습니다", e);
         }
 
         final UserDetails userDetails = userDetailsService
@@ -38,6 +42,6 @@ public class AuthController {
 
         final String jwt = jwtUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new AuthResponse(jwt));
+        return ResponseEntity.ok(new AuthResponse(jwt,"성공"));
     }
 }

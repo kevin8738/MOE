@@ -1,6 +1,8 @@
 package erd.exmaple.erd.example.domain;
 
 import erd.exmaple.erd.example.domain.common.BaseEntity;
+import erd.exmaple.erd.example.domain.enums.District;
+import erd.exmaple.erd.example.domain.enums.Region;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,6 +30,8 @@ public class ExhibitionEntity extends BaseEntity {
     @Column(nullable = false,length = 100)
     private String place;
 
+    private String photoUrl;
+
     @Column(length = 100)
     private String description;
 
@@ -38,6 +42,11 @@ public class ExhibitionEntity extends BaseEntity {
     private LocalDate endDate;
 
     private LocalDateTime searchDate;
+
+    private boolean heart;
+
+    private int likesCount = 0;
+
 
     @OneToMany(mappedBy = "exhibition",cascade = CascadeType.REMOVE, orphanRemoval = true,fetch = FetchType.LAZY)
     private List<FollowEntity> FollowEntityList = new ArrayList<>();
@@ -51,4 +60,19 @@ public class ExhibitionEntity extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "regionId")
     private RegionEntity region;
+
+    @OneToMany(mappedBy = "exhibition", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<SearchEntity> searchEntities = new ArrayList<>();
+
+    public void incrementLikesCount() {
+        this.likesCount++;
+    }
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Region regions;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private District district;
 }

@@ -21,17 +21,12 @@ public class Record_PhotoBodyEntity extends BaseEntity {
     private Long id;
 
     @Column(length = 200)
-    @ColumnDefault("")
+    @ColumnDefault("''")
     private String body;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recordPhotoId")
     private Record_PhotoEntity recordPhoto;
-
-    @Transient
-    public String getPhotoUrl() {
-        return recordPhoto != null && recordPhoto.getPhotoEntity() != null ? recordPhoto.getPhotoEntity().getPhoto() : null;
-    }
 
     @Transient
     public String getName() {
@@ -69,19 +64,4 @@ public class Record_PhotoBodyEntity extends BaseEntity {
         return null;
     }
 
-    @Transient
-    public boolean isHeart() {
-        if (recordPhoto != null && recordPhoto.getRecordPage() != null) {
-            if (recordPhoto.getRecordPage().getExhibition() != null) {
-                return recordPhoto.getRecordPage().getExhibition().getFollowEntityList().stream()
-                        .anyMatch(follow -> follow.getUser().getId().equals(recordPhoto.getRecordPage().getUser().getId())
-                                && follow.getHeart().equals(Heart.ACTIVE));
-            } else if (recordPhoto.getRecordPage().getPopupStore() != null) {
-                return recordPhoto.getRecordPage().getPopupStore().getFollowEntityList().stream()
-                        .anyMatch(follow -> follow.getUser().getId().equals(recordPhoto.getRecordPage().getUser().getId())
-                                && follow.getHeart().equals(Heart.ACTIVE));
-            }
-        }
-        return false;
-    }
 }

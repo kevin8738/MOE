@@ -1,5 +1,7 @@
 package erd.exmaple.erd.example.domain.dto;
 
+import erd.exmaple.erd.example.domain.enums.Ad;
+import erd.exmaple.erd.example.domain.enums.Marketing;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.*;
@@ -32,5 +34,8 @@ public class UserRequestDTO {
 
         @NotEmpty(message = "닉네임은 필수 항목입니다.")
         private String nickname;
+
+        private Ad ad;
+        private Marketing marketing;
     }
 }

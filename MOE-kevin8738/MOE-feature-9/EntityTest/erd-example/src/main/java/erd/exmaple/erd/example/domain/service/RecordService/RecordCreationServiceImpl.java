@@ -22,8 +22,8 @@ public class RecordCreationServiceImpl implements RecordCreationService {
 
     @Override
     @Transactional
-    public RecordResponseDTO.RecordResultDTO createOrUpdateRecord(RecordRequestDTO.RecordDTO request) {
-        Record_PhotoEntity recordPhoto = recordPhotoRepository.findById(request.getRecordPhotoId())
+    public RecordResponseDTO.RecordResultDTO createOrUpdateRecord(Long recordPageId, Long recordPhotoId, RecordRequestDTO.RecordDTO request) {
+        Record_PhotoEntity recordPhoto = recordPhotoRepository.findById(recordPhotoId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid recordPhotoId"));
 
         // record_photo_id로 기존 데이터 조회

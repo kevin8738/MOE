@@ -5,7 +5,6 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example" />
-        <option name="gradleJvm" value="openjdk-22" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example" />

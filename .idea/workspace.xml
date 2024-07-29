@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="Record_PhotoBodyEntity 생성안되는 오류 수정" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/MOE-kevin8738/MOE-feature-9/EntityTest/erd-example">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/100" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2jSVnPOzJC0mbHGFDmOltu2oncl" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build erd-example.executor": "Run",
+    "Gradle.erd-example 빌드.executor": "Run",
+    "Gradle.소스 다운로드.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ErdExampleApplication.executor": "Run",
+    "git-widget-placeholder": "feature/100",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sickt/Downloads/MOE",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kd690\Downloads\MOE-main\MOE-main\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\service\UserService" />
+      <recent name="C:\Users\kd690\Downloads\MOE-main\MOE-main\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\jwt" />
+      <recent name="C:\Users\kd690\Downloads\MOE-main\MOE-main\MOE-kevin8738\MOE-feature-9\EntityTest\erd-example\src\main\java\erd\exmaple\erd\example\domain\service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="erd.exmaple.erd.example.domain.config" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ErdExampleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="erd-example.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="erd.exmaple.erd.example.ErdExampleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84168a51-cc18-46d7-8ebb-1285c571836b" name="Changes" comment="" />
+      <created>1721380631912</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721380631912</updated>
+      <workItem from="1721380634479" duration="9488000" />
+      <workItem from="1721413769505" duration="3791000" />
+      <workItem from="1721444709852" duration="575000" />
+      <workItem from="1721472621600" duration="17019000" />
+      <workItem from="1721546538061" duration="15228000" />
+      <workItem from="1721808949682" duration="6580000" />
+      <workItem from="1722231403026" duration="1149000" />
+    </task>
+    <task id="LOCAL-00001" summary="Changes">
+      <option name="closed" value="true" />
+      <created>1721519725631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721519725631</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changes">
+      <option name="closed" value="true" />
+      <created>1721521289342</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721521289342</updated>
+    </task>
+    <task id="LOCAL-00003" summary="검색 API 구현">
+      <option name="closed" value="true" />
+      <created>1721638484145</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721638484145</updated>
+    </task>
+    <task id="LOCAL-00004" summary="검색페이지(최근 검색) API 구현">
+      <option name="closed" value="true" />
+      <created>1721802793394</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721802793394</updated>
+    </task>
+    <task id="LOCAL-00005" summary="검색API 오류 메세지 추가">
+      <option name="closed" value="true" />
+      <created>1721803698570</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721803698570</updated>
+    </task>
+    <task id="LOCAL-00006" summary="검색API 오류 메세지 추가">
+      <option name="closed" value="true" />
+      <created>1721809333267</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721809333267</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Record_PhotoBodyEntity 생성안되는 오류 수정">
+      <option name="closed" value="true" />
+      <created>1721887182124</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721887182124</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changes" />
+    <MESSAGE value="검색 API 구현" />
+    <MESSAGE value="검색페이지(최근 검색) API 구현" />
+    <MESSAGE value="검색API 오류 메세지 추가" />
+    <MESSAGE value="Record_PhotoBodyEntity 생성안되는 오류 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Record_PhotoBodyEntity 생성안되는 오류 수정" />
+  </component>
+</project>
