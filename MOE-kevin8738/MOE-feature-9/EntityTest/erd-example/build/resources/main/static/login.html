@@ -6,14 +6,48 @@
     <title>Social Login Test</title>
     <script>
         async function socialLogin(provider) {
+<<<<<<< HEAD
             // Redirect to the provider's login page
             window.location.href = `/oauth2/authorization/${provider}`;
         }
+=======
+            window.location.href = `/oauth2/authorization/${provider}`;
+        }
+        async function fetchWithAuth(url) {
+            const token = localStorage.getItem('jwtToken');
+            if (!token) {
+                alert('No token found. Please login first.');
+                return;
+            }
+
+            const response = await fetch(url, {
+                method: 'GET', // or 'POST'
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+            } else {
+                alert('Request failed.');
+            }
+        }
+
+        // 사용 예시
+        fetchWithAuth('/some-protected-endpoint');
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 
         async function logout() {
             const token = localStorage.getItem('jwtToken');
             if (!token) {
+<<<<<<< HEAD
                 alert('No token found. Please login first.');
+=======
+                showMessage('No token found. Please login first.');
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
                 return;
             }
 
@@ -27,6 +61,7 @@
 
             if (response.ok) {
                 localStorage.removeItem('jwtToken');
+<<<<<<< HEAD
                 alert('Logout successful.');
             } else {
                 alert('Logout failed.');
@@ -40,13 +75,22 @@
                 alert('Logout successful.');
             } else {
                 alert('Logout failed.');
+=======
+                showMessage('Logout successful.');
+            } else {
+                showMessage('Logout failed.');
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
             }
         }
 
         async function checkAuthentication() {
             const token = localStorage.getItem('jwtToken');
             if (!token) {
+<<<<<<< HEAD
                 alert('No token found. Please login first.');
+=======
+                showMessage('No token found. Please login first.');
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
                 return;
             }
 
@@ -60,6 +104,7 @@
 
             if (response.ok) {
                 const text = await response.text();
+<<<<<<< HEAD
                 alert(text);
             } else {
                 alert('Authentication check failed.');
@@ -79,16 +124,38 @@
         });
 
         // Extract JWT token from URL if present
+=======
+                showMessage(text);
+            } else {
+                showMessage('Authentication check failed.');
+            }
+        }
+
+        function showMessage(message) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+        }
+
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             const token = urlParams.get('token');
             if (token) {
                 localStorage.setItem('jwtToken', token);
+<<<<<<< HEAD
                 alert('Login successful. Token saved.');
 
             }
         }
 
+=======
+                showMessage('Login successful. Token saved.');
+
+                window.history.replaceState(null, null, window.location.pathname);
+            }
+        }
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
     </script>
 </head>
 <body>
@@ -100,5 +167,10 @@
 <h2>Actions</h2>
 <button onclick="checkAuthentication()">Check Authentication</button>
 <button onclick="logout()">Logout</button>
+<<<<<<< HEAD
+=======
+
+<div id="message" style="display: none; color: red;"></div>
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 </body>
 </html>

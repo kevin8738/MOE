@@ -227,7 +227,11 @@ public class UserRestController {
 
 
 
+<<<<<<< HEAD
     //    @PostMapping("/reset-password")
+=======
+//    @PostMapping("/reset-password")
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 //    public ResponseEntity<String> resetPassword(@RequestBody PasswordResetRequestDTO request) {
 //        String phoneNumber = request.getPhoneNumber();
 //        String confirmPhoneNumber = request.getConfirmPhoneNumber();

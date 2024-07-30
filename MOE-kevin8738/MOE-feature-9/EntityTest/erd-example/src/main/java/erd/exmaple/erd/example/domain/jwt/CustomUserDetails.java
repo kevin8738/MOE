@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //package erd.exmaple.erd.example.domain.jwt;
+=======
+package erd.exmaple.erd.example.domain.jwt;//package erd.exmaple.erd.example.domain.jwt;
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 //
 //import erd.exmaple.erd.example.domain.UserEntity;
 //import org.springframework.security.core.GrantedAuthority;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -196,3 +197,82 @@
 <!--</script>-->
 <!--</body>-->
 <!--</html>-->
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Login Test</title>
+    <script>
+        let jwtToken = '';
+
+        function login(provider) {
+            const redirectUri = `http://localhost:8080/auth/${provider}/callback`;
+            const clientId = {
+                kakao: 'a090ed16ad7cf9039104c87a03989c38',
+                naver: 'q6EE5D8e5hxql9xl1rzh',
+                google: '56882231819-eler1td32o26rjorconut5jkdffasekf.apps.googleusercontent.com'
+            }[provider];
+
+            const authUrl = {
+                kakao: `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`,
+                naver: `https://nid.naver.com/oauth2.0/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`,
+                google: `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=email profile`
+            }[provider];
+
+            window.location.href = authUrl;
+        }
+
+        async function sendRequest() {
+            if (!jwtToken) {
+                alert("Please login first.");
+                return;
+            }
+
+            const response = await fetch('http://localhost:8080/your-secured-endpoint', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${jwtToken}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                alert("Request failed: " + response.statusText);
+                return;
+            }
+
+            const data = await response.json();
+            console.log(data);
+            alert("Request successful: " + JSON.stringify(data));
+        }
+
+        function setJwtToken(token) {
+            jwtToken = token;
+            document.getElementById('tokenDisplay').textContent = `JWT Token: ${jwtToken}`;
+        }
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+            if (token) {
+                setJwtToken(token);
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Social Login Test</h1>
+<button onclick="login('kakao')">Login with Kakao</button>
+<button onclick="login('naver')">Login with Naver</button>
+<button onclick="login('google')">Login with Google</button>
+
+<h2>JWT Token</h2>
+<p id="tokenDisplay">JWT Token will be displayed here after login.</p>
+
+<h2>Send Request</h2>
+<button onclick="sendRequest()">Send Request with JWT Token</button>
+</body>
+</html>
+>>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
