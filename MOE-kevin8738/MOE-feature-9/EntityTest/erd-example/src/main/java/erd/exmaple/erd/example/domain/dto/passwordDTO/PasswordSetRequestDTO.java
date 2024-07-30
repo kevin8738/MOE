@@ -20,9 +20,5 @@ public class PasswordSetRequestDTO {
     @NotEmpty(message = "새 비밀번호 확인은 필수 항목입니다.")
     @Size(min = 8, message = "새 비밀번호 확인은 최소 8자 이상이어야 합니다.")
     private String confirmPassword;
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 }

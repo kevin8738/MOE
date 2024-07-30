@@ -4,11 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-<<<<<<< HEAD
-import io.jsonwebtoken.security.SignatureException;
-
-=======
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -90,12 +85,6 @@ public class JwtUtil {
     public Boolean validateToken(String token, UserDetails userDetails) {
         // JWT가 유효한지 검증합니다.
         final String username = extractUsername(token);
-<<<<<<< HEAD
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
-=======
-        boolean isValid = (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
-        logger.info("Token validation result: {}", isValid);
-        return isValid;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
     }
 }

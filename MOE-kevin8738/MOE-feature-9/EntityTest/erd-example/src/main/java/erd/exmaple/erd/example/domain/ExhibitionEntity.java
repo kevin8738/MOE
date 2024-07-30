@@ -1,11 +1,8 @@
 package erd.exmaple.erd.example.domain;
 
 import erd.exmaple.erd.example.domain.common.BaseEntity;
-<<<<<<< HEAD
-=======
 import erd.exmaple.erd.example.domain.enums.District;
 import erd.exmaple.erd.example.domain.enums.Region;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -33,11 +30,8 @@ public class ExhibitionEntity extends BaseEntity {
     @Column(nullable = false,length = 100)
     private String place;
 
-<<<<<<< HEAD
-=======
     private String photoUrl;
 
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
     @Column(length = 100)
     private String description;
 
@@ -49,11 +43,8 @@ public class ExhibitionEntity extends BaseEntity {
 
     private LocalDateTime searchDate;
 
-<<<<<<< HEAD
-=======
     private boolean heart;
 
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
     private int likesCount = 0;
 
 
@@ -76,8 +67,6 @@ public class ExhibitionEntity extends BaseEntity {
     public void incrementLikesCount() {
         this.likesCount++;
     }
-<<<<<<< HEAD
-=======
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -86,5 +75,4 @@ public class ExhibitionEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private District district;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 }

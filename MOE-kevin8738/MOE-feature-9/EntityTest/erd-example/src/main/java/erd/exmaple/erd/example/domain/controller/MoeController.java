@@ -1,14 +1,5 @@
 package erd.exmaple.erd.example.domain.controller;
 
-<<<<<<< HEAD
-import erd.exmaple.erd.example.domain.dto.UserDTO;
-import erd.exmaple.erd.example.domain.service.UserService.UserServiceSocial;
-import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.*;
-
-=======
 import erd.exmaple.erd.example.domain.dto.ExhibitionDTO;
 import erd.exmaple.erd.example.domain.dto.PopupStoreDTO;
 import erd.exmaple.erd.example.domain.dto.UserDTO;
@@ -24,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/Moe")
@@ -33,10 +23,7 @@ public class MoeController {
     private static final Logger log = LoggerFactory.getLogger(MoeController.class);
 
     private final UserServiceSocial userServiceSocial;
-<<<<<<< HEAD
-=======
     private final RegionService regionService;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 
     @GetMapping
     public String redirectToLogin() {
@@ -51,8 +38,6 @@ public class MoeController {
         log.info("Main page accessed by user id: {}", userDto.getId());
         return userDto;
     }
-<<<<<<< HEAD
-=======
 
     @GetMapping("/main")
     public String mainPage(Model model, HttpSession session) {
@@ -79,6 +64,4 @@ public class MoeController {
 
         return "main";
     }
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 }
-

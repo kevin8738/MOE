@@ -1,18 +1,5 @@
 package erd.exmaple.erd.example.domain.service.UserService;
 
-<<<<<<< HEAD
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import erd.exmaple.erd.example.domain.UserEntity;
-import erd.exmaple.erd.example.domain.converter.UserConverter;
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordChangeRequestDTO;
-import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
-import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
-import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordFindRequestDTO;
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordSetRequestDTO;
-=======
 import erd.exmaple.erd.example.domain.UserEntity;
 import erd.exmaple.erd.example.domain.converter.UserConverter;
 import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
@@ -20,28 +7,17 @@ import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
 import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordChangeRequestDTO;
 import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordFindRequestDTO;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 import erd.exmaple.erd.example.domain.enums.Ad;
 import erd.exmaple.erd.example.domain.enums.LoginStatus;
 import erd.exmaple.erd.example.domain.enums.Marketing;
 import erd.exmaple.erd.example.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-<<<<<<< HEAD
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-=======
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
-import java.time.LocalDate;
-=======
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

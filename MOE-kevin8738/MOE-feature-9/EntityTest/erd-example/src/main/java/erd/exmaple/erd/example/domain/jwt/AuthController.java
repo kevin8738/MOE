@@ -2,24 +2,19 @@ package erd.exmaple.erd.example.domain.jwt;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
-=======
 import org.springframework.http.ResponseEntity;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-<<<<<<< HEAD
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-=======
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
+
 
 @RestController
 @CrossOrigin(origins = "*")

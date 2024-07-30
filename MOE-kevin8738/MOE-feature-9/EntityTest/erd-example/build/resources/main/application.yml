@@ -1,18 +1,8 @@
 spring:
   datasource:
-<<<<<<< HEAD
     url: jdbc:mysql://moe-db-1.cdgugwuowxj4.ap-northeast-2.rds.amazonaws.com:3306/moe
     username: root
     password: kevin1104
-=======
-
-    url: jdbc:mysql://localhost:3306/test11
-    username: root
-    password: adsx123
-#    url: jdbc:mysql://moe-db-1.cdgugwuowxj4.ap-northeast-2.rds.amazonaws.com:3306/moe
-#    username: root
-#    password: kevin1104
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
@@ -46,13 +36,8 @@ spring:
             client-secret: B7S3PhKTGSKJQ9T4fFO2ucBV6CXUFqXF
             authorization-grant-type: authorization_code
             scope: # https://developers.kakao.com/docs/latest/ko/kakaologin/common#user-info
-<<<<<<< HEAD
-                - profile_nickname
-                - profile_image
-=======
               - profile_nickname
               - profile_image
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
             redirect-uri: http://localhost:8080/login/oauth2/code/kakao
             client-name: Kakao
             client-authentication-method: client_secret_post
@@ -97,10 +82,14 @@ spring:
 
 
 jwt:
-<<<<<<< HEAD
   secret: THISISMOETESTKEYV0S2V5Rm9ySlRXdG9TZWNyZXQxM=
-=======
-  secret: THISISMOETESTKEYV0S2V5Rm9ySlRXdG9TZWNyZXQxM=
+coolsms:
+  api:
+    #    외부에 노출되면 안된다해서 지우고 뒤에 푸시 테스트 필요시 말씀주십쇼
+    key: ""
+    secret: ""
+    number: 01037764343
 
-
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
+  #     url: jdbc:mysql://localhost:3306/test11
+  #     username: root
+  #     password: adsx123

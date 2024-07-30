@@ -63,6 +63,10 @@ dependencies {
 
 	//소셜로그인에필요
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	//인증번호API
+	//implementation 'net.nurigo:sdk:4.2.7'
+	implementation group: 'net.nurigo', name: 'javaSDK', version: '2.2'
 }
 
 tasks.named('test') {

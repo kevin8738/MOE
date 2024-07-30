@@ -1,20 +1,12 @@
 package erd.exmaple.erd.example.domain.service.UserService;
 
+
 import erd.exmaple.erd.example.domain.UserEntity;
-<<<<<<< HEAD
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordChangeRequestDTO;
-import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
-import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
-import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordFindRequestDTO;
-import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordSetRequestDTO;
-=======
 import erd.exmaple.erd.example.domain.dto.UserPhoneNumberCheckResultDTO;
 import erd.exmaple.erd.example.domain.dto.UserRequestDTO;
 import erd.exmaple.erd.example.domain.dto.UserResponseDTO;
 import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordChangeRequestDTO;
 import erd.exmaple.erd.example.domain.dto.passwordDTO.PasswordFindRequestDTO;
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
 
 import java.util.List;
 import java.util.Optional;

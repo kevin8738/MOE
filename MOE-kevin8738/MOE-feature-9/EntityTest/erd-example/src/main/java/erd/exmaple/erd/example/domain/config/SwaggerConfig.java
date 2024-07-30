@@ -14,13 +14,10 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI UMCstudyAPI() {
         Info info = new Info()
-<<<<<<< HEAD
+
                 .title("UMC Server MOE API")
                 .description("UMC Server MOE API 명세서")
-=======
-                .title("UMC Server WorkBook API")
-                .description("UMC Server WorkBook API 명세서")
->>>>>>> 2a1b47c53e50be52577f77cffbbd6e9bd293ba33
+
                 .version("1.0.0");
 
         String jwtSchemeName = "JWT TOKEN";
