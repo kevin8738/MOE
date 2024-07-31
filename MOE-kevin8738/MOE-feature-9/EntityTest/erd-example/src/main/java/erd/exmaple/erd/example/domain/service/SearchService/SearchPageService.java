@@ -104,6 +104,7 @@ public class SearchPageService {
 
     private SearchResultDTO toSearchResultDTO(ExhibitionEntity exhibition, PhotoEntity photo, boolean followed) {
         return SearchResultDTO.builder()
+                .id(exhibition.getId())
                 .name(exhibition.getName())
                 .photo(photo != null ? photo.getPhoto() : null)
                 .startDate(exhibition.getStartDate().atStartOfDay())
@@ -114,6 +115,7 @@ public class SearchPageService {
 
     private SearchResultDTO toSearchResultDTO(Popup_StoreEntity popupStore, PhotoEntity photo, boolean followed) {
         return SearchResultDTO.builder()
+                .id(popupStore.getId())
                 .name(popupStore.getName())
                 .photo(photo != null ? photo.getPhoto() : null)
                 .startDate(popupStore.getStartDate().atStartOfDay())
